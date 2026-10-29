@@ -1,0 +1,84 @@
+:root {
+  /* Teal scale */
+  --color-teal-900: #0b3d3f;
+  --color-teal-700: #146b6e;
+  --color-teal-500: #15919b;
+  --color-teal-300: #4dd9e8;
+  --color-teal-100: #d6f3f4;
+  --color-teal-50: #effbfb;
+
+  /* Orange scale */
+  --color-orange-600: #d9600a;
+  --color-orange-500: #f5820f;
+  --color-orange-50: #fdecd3;
+
+  /* Neutral scale */
+  --color-gray-900: #12141c;
+  --color-gray-700: #3a4356;
+  --color-gray-500: #7c8592;
+  --color-gray-300: #d6d9e0;
+  --color-gray-100: #edeef2;
+  --color-gray-50: #f7f8fa;
+  --color-white: #ffffff;
+
+  /* Semantic */
+  --color-success: #1fae71;
+  --color-danger: #e9463e;
+  --color-star: #f5a623;
+
+  /* Brand aliases */
+  --color-primary: var(--color-teal-500);
+  --color-primary-dark: var(--color-teal-900);
+  --color-accent: var(--color-orange-500);
+  --color-text: var(--color-gray-900);
+  --color-text-muted: var(--color-gray-500);
+  --color-border: var(--color-gray-300);
+  --color-bg-tint: var(--color-teal-50);
+
+  /* Typography */
+  --font-base: "Inter", sans-serif;
+
+  --text-h1-size: 48px;
+  --text-h1-weight: 700;
+  --text-h2-size: 36px;
+  --text-h2-weight: 700;
+  --text-h3-size: 28px;
+  --text-h3-weight: 600;
+  --text-h4-size: 22px;
+  --text-h4-weight: 600;
+  --text-body-lg-size: 18px;
+  --text-body-lg-weight: 400;
+  --text-body-size: 16px;
+  --text-body-weight: 400;
+  --text-body-sm-size: 14px;
+  --text-body-sm-weight: 400;
+  --text-caption-size: 12px;
+  --text-caption-weight: 500;
+  --text-button-size: 16px;
+  --text-button-weight: 700;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Grid */
+  --grid-max-width: 1200px;
+  --grid-gutter: 24px;
+  --grid-margin: 120px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 56px;
+  --space-10: 64px;
+  --space-11: 80px;
+}

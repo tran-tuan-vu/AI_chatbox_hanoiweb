@@ -1,0 +1,24 @@
+# Bí mật: API key, tài khoản dashboard, secret key
+.env
+.env.*
+!.env.example
+
+# Dữ liệu thật của khách (hồ sơ visitor, lịch sử chat)
+data/
+*.db
+*.sqlite3
+
+# Sinh lại được bằng `python ingest.py`
+vectorstore/
+
+# Môi trường Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Công cụ / editor cục bộ
+.claude/
+.idea/
+.DS_Store
+Thumbs.db

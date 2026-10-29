@@ -1,0 +1,95 @@
+/* ---------- Hero Liên hệ ---------- */
+.contact-hero {
+  background: var(--color-gray-50);
+  padding: var(--space-10) 0;
+}
+
+.contact-hero__inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-9);
+  align-items: start;
+}
+
+.contact-hero__title {
+  font-size: var(--text-h1-size);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-3);
+}
+
+.contact-hero__subtitle {
+  font-size: var(--text-h3-size);
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: var(--space-4);
+}
+
+.contact-hero__content p {
+  margin-bottom: var(--space-6);
+}
+
+.contact-hero__actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.contact-hero__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.contact-info-item__label {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-2);
+}
+
+.contact-info-item__value {
+  color: var(--color-gray-900);
+  font-size: var(--text-body-lg-size);
+}
+
+a.contact-info-item__value:hover {
+  color: var(--color-accent);
+}
+
+/* ---------- Bản đồ ---------- */
+.contact-map {
+  padding: 0 0 var(--space-9);
+}
+
+.contact-map__frame {
+  width: 100%;
+  height: 420px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.contact-map__frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 1100px) {
+  .contact-hero__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-map__frame {
+    height: 280px;
+  }
+}

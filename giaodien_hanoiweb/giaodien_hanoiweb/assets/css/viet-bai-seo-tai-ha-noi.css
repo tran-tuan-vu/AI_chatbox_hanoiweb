@@ -1,0 +1,950 @@
+/* =========================================================
+   DỊCH VỤ VIẾT BÀI SEO TẠI HÀ NỘI
+   Bám theo design token và component sẵn có của HanoiWeb.
+   ========================================================= */
+
+/* ---------- Hero ---------- */
+.writing-seo-hero {
+    background: var(--color-white);
+    padding: 42px 0 44px;
+    overflow: hidden;
+}
+
+.writing-seo-hero__inner {
+    display: grid;
+    grid-template-columns: 1.02fr 1fr;
+    align-items: center;
+    gap: 56px;
+}
+
+.writing-seo-hero__title {
+    max-width: 590px;
+    color: var(--color-primary);
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.28;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.writing-seo-hero__desc {
+    max-width: 575px;
+    color: var(--color-gray-700);
+    font-size: var(--text-body-lg-size);
+    line-height: 1.55;
+    margin-bottom: 20px;
+}
+
+.writing-seo-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.writing-seo-hero__actions .btn {
+    min-height: 48px;
+    padding: 12px 20px;
+    justify-content: center;
+    line-height: 1;
+}
+
+.writing-seo-hero__actions .btn--outline-accent {
+    background: var(--color-white);
+    border-width: 2px;
+}
+
+/* Google mockup */
+.writing-seo-search {
+    width: 100%;
+    max-width: 600px;
+    justify-self: end;
+    background: #202124;
+    border: 1px solid #4a5060;
+    border-radius: 22px;
+    padding: 18px 20px 16px;
+    color: var(--color-white);
+    box-shadow: 0 14px 30px rgba(18, 20, 28, 0.12);
+}
+
+.writing-seo-search__bar {
+    min-height: 46px;
+    border: 1px solid #4a5060;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 18px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: var(--text-body-sm-size);
+}
+
+.writing-seo-search__bar>i {
+    color: #b4bccb;
+}
+
+.writing-seo-search__icons {
+    margin-left: auto;
+    display: inline-flex;
+    gap: 12px;
+    color: #9098a7;
+}
+
+.writing-seo-search__results {
+    padding: 16px 10px 0;
+}
+
+.writing-seo-search__result {
+    padding: 0 0 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, .10);
+}
+
+.writing-seo-search__site {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 7px;
+}
+
+.writing-seo-search__site strong {
+    font-size: 13px;
+    font-weight: 600;
+    color: #f4f5f7;
+}
+
+.writing-seo-search__site small {
+    font-size: 10px;
+    color: #a8afbd;
+}
+
+.writing-seo-search__favicon {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: var(--color-white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #7c8592;
+    flex-shrink: 0;
+}
+
+.writing-seo-search__favicon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.writing-seo-search__title {
+    color: #8ab4f8;
+    font-size: 15px;
+    line-height: 1.35;
+    margin-bottom: 4px;
+}
+
+.writing-seo-search__desc {
+    color: #bdc1c6;
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.writing-seo-search__stars {
+    color: var(--color-star);
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.writing-seo-search__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 8px;
+}
+
+.writing-seo-search__chips span {
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 6px;
+    padding: 2px 8px;
+    color: #aeb4bf;
+    font-size: 9px;
+}
+
+.writing-seo-search__sponsored {
+    color: #e8eaed;
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+/* ---------- Nội dung giúp người đọc quyết định ---------- */
+.writing-seo-value {
+    background: var(--color-white);
+    padding: 18px 0 48px;
+}
+
+.writing-seo-value__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    align-items: center;
+    gap: 54px;
+}
+
+.writing-seo-value__media {
+    overflow: hidden;
+}
+
+.writing-seo-value__media img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.writing-seo-value__content h2 {
+    color: var(--color-primary);
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.28;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.writing-seo-value__content>p {
+    color: var(--color-gray-700);
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 8px;
+}
+
+.writing-seo-value__points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.writing-seo-value__points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--color-gray-700);
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 8px 0;
+    border-top: 1px solid var(--color-gray-300);
+}
+
+.writing-seo-value__points span {
+    color: var(--color-accent);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* ---------- Vấn đề ---------- */
+.writing-seo-problem {
+    background: #f3f4f6;
+    padding: 36px 0 54px;
+}
+
+.writing-seo-problem__head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 70px;
+    margin-bottom: 42px;
+}
+
+.writing-seo-problem__head h2 {
+    color: var(--color-primary);
+    font-size: 38px;
+    line-height: 1.18;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.writing-seo-problem__head p {
+    color: var(--color-gray-700);
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: 600;
+    max-width: 540px;
+}
+
+.writing-seo-problem__card {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    background: var(--color-white);
+    border: 1px solid #8b95a5;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 5px rgba(18, 20, 28, .22);
+}
+
+.writing-seo-problem__list {
+    padding: 66px 22px 64px;
+    border-right: 1px solid #8b95a5;
+}
+
+.writing-seo-problem__item {
+    min-height: 52px;
+    display: grid;
+    grid-template-columns: 58px 1fr 28px;
+    align-items: center;
+    gap: 18px;
+    padding: 0 16px;
+    border-radius: 12px;
+    color: var(--color-gray-700);
+    margin-bottom: 18px;
+}
+
+.writing-seo-problem__item:last-child {
+    margin-bottom: 0;
+}
+
+.writing-seo-problem__item strong {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.writing-seo-problem__item i {
+    justify-self: end;
+    font-size: 20px;
+}
+
+.writing-seo-problem__num {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.writing-seo-problem__item.is-active {
+    background: #2097a1;
+    color: var(--color-white);
+}
+
+.writing-seo-problem__item.is-active .writing-seo-problem__num {
+    color: #76dce3;
+}
+
+.writing-seo-problem__detail {
+    padding: 26px 42px 30px 48px;
+}
+
+.writing-seo-problem__detail h3 {
+    color: var(--color-teal-700);
+    font-size: 28px;
+    line-height: 1.22;
+    font-weight: 700;
+    margin-bottom: 26px;
+}
+
+.writing-seo-problem__detail>p {
+    color: var(--color-gray-700);
+    font-size: 19px;
+    line-height: 1.4;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.writing-seo-problem__detail ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.writing-seo-problem__detail li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: var(--color-gray-900);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 10px 0;
+}
+
+.writing-seo-problem__detail li i {
+    margin-top: 4px;
+}
+
+/* ---------- Sáu lớp kiểm soát ---------- */
+.writing-seo-control {
+    background: var(--color-white);
+    padding: 38px 0 52px;
+}
+
+.writing-seo-control__title {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.writing-seo-control__box {
+    border: 1px solid #667085;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--color-white);
+}
+
+.writing-seo-control__tabs {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    min-height: 52px;
+}
+
+.writing-seo-control__tabs button {
+    border: 0;
+    border-right: 1px solid #667085;
+    border-bottom: 1px solid #667085;
+    background: var(--color-white);
+    color: var(--color-gray-900);
+    font: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: default;
+}
+
+.writing-seo-control__tabs button:last-child {
+    border-right: 0;
+}
+
+.writing-seo-control__tabs button.is-active {
+    background: #2498a1;
+    color: var(--color-white);
+}
+
+.writing-seo-control__body {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: 1.35fr .8fr;
+    align-items: center;
+    gap: 30px;
+    padding: 24px 30px 34px;
+}
+
+.writing-seo-control__content h3 {
+    color: var(--color-primary);
+    font-size: 32px;
+    line-height: 1.23;
+    font-weight: 700;
+    max-width: 550px;
+    margin-bottom: 22px;
+}
+
+.writing-seo-control__content>p {
+    color: var(--color-gray-700);
+    font-size: 16px;
+    line-height: 1.45;
+    max-width: 690px;
+}
+
+.writing-seo-control__meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 550px;
+    margin-top: 46px;
+    text-align: center;
+}
+
+.writing-seo-control__meta span {
+    display: block;
+    color: var(--color-gray-500);
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.writing-seo-control__meta strong {
+    color: var(--color-gray-900);
+    font-size: 14px;
+}
+
+.writing-seo-control__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.writing-seo-control__icon img {
+    width: min(100%, 370px);
+    height: auto;
+    display: block;
+}
+
+/* ---------- Workflow ---------- */
+.writing-seo-workflow {
+    background: #2197a1;
+    padding: 34px 0 46px;
+}
+
+.writing-seo-workflow__title {
+    text-align: center;
+    color: var(--color-white);
+    font-size: 34px;
+    line-height: 1.22;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.writing-seo-workflow__box {
+    overflow: hidden;
+    border-radius: 15px;
+    background: var(--color-white);
+}
+
+.writing-seo-workflow__tabs {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background: #2197a1;
+}
+
+.writing-seo-workflow__tabs button {
+    min-height: 98px;
+    border: 0;
+    border-right: 1px solid rgba(255, 255, 255, .18);
+    background: transparent;
+    color: var(--color-white);
+    font: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: default;
+}
+
+.writing-seo-workflow__tabs button:last-child {
+    border-right: 0;
+}
+
+.writing-seo-workflow__tabs button.is-active {
+    background: #0b4d50;
+}
+
+.writing-seo-workflow__tabs span {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--color-white);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.writing-seo-workflow__tabs strong {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.writing-seo-workflow__panel {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 20px 30px;
+    min-height: 208px;
+}
+
+.writing-seo-workflow__copy h3 {
+    color: var(--color-primary);
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.writing-seo-workflow__copy p {
+    color: var(--color-gray-900);
+    font-size: 16px;
+    line-height: 1.45;
+    max-width: 600px;
+}
+
+.writing-seo-workflow__stats {
+    display: grid;
+    gap: 18px;
+}
+
+.writing-seo-workflow__stats>div {
+    border: 1px solid #8b95a5;
+    border-radius: 15px;
+    padding: 10px 14px;
+}
+
+.writing-seo-workflow__stats span {
+    display: block;
+    color: var(--color-gray-700);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.writing-seo-workflow__stats strong {
+    color: var(--color-gray-900);
+    font-size: 15px;
+}
+
+/* ---------- Dự án ---------- */
+.writing-seo-projects {
+    padding: 42px 0 54px;
+}
+
+.writing-seo-section-head {
+    margin-bottom: 26px;
+}
+
+.writing-seo-projects .project-card {
+    border: 1px solid var(--color-gray-300);
+    box-shadow: none;
+    padding: 0 0 20px;
+    overflow: hidden;
+}
+
+.writing-seo-projects .ph-project {
+    border-radius: 0;
+}
+
+.writing-seo-projects .project-card .h4 {
+    font-size: 18px;
+    line-height: 1.3;
+    padding: 0 20px;
+    min-height: 48px;
+}
+
+.writing-seo-projects .project-card .link-cta {
+    margin-left: 20px;
+}
+
+/* ---------- Pricing ---------- */
+.writing-seo-pricing {
+    padding: 44px 0 58px;
+}
+
+.writing-seo-pricing .pricing__grid {
+    gap: 16px;
+}
+
+.writing-seo-pricing .price-card {
+    padding: 28px 22px 24px;
+    border-radius: 16px;
+}
+
+.writing-seo-pricing .price-card .h4 {
+    color: var(--color-teal-700);
+    text-align: center;
+    font-size: 18px;
+}
+
+.writing-seo-pricing .price-card>.body-sm {
+    text-align: center;
+    min-height: 46px;
+    line-height: 1.35;
+}
+
+.writing-seo-pricing .price-card__price {
+    font-size: 32px;
+    margin: 18px 0 16px;
+}
+
+.writing-seo-pricing .price-card__price span {
+    color: var(--color-gray-700);
+}
+
+.writing-seo-pricing .price-card__list li {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 1.3;
+}
+
+.writing-seo-pricing .price-card__list li::before {
+    color: #1fb987;
+}
+
+.writing-seo-pricing .price-card--featured {
+    background: linear-gradient(160deg, #237d80, #28bac5);
+}
+
+.writing-seo-pricing .price-card--featured .h4,
+.writing-seo-pricing .price-card--featured .price-card__price,
+.writing-seo-pricing .price-card--featured .price-card__price span {
+    color: var(--color-white);
+}
+
+.writing-seo-pricing .price-card--featured .price-card__list li::before {
+    color: #69f0c6;
+}
+
+/* ---------- Partners ---------- */
+.writing-seo-partners {
+    min-height: 210px;
+    padding: 24px 0 18px;
+    background: linear-gradient(90deg, #08484d 0%, #168d95 60%, #15919b 100%);
+}
+
+.writing-seo-partners .partners__title {
+    font-size: 30px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.writing-seo-partners .partners__logo {
+    height: 76px;
+    max-width: 260px;
+    padding: 0 42px;
+}
+
+/* ---------- Blog ---------- */
+.writing-seo-blog {
+    padding: 36px 0 48px;
+}
+
+.writing-seo-blog__title {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.writing-seo-blog .blog__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.writing-seo-blog .blog-card {
+    min-height: 450px;
+    border-radius: 18px;
+}
+
+.writing-seo-blog .blog-card .h4 {
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 500;
+    min-height: 110px;
+}
+
+.writing-seo-blog .ph-blog {
+    aspect-ratio: 1.35 / 1;
+}
+
+.writing-seo-blog__pagination {
+    margin-top: 14px;
+}
+
+/* ---------- Form + FAQ ---------- */
+.writing-seo-contact {
+    background: #f3f4f6;
+    padding: 42px 0 52px;
+}
+
+.writing-seo-contact__inner {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+    gap: 18px;
+}
+
+.writing-seo-contact__form {
+    background: #329ba4;
+    border-radius: 28px;
+    padding: 24px 20px 20px;
+}
+
+.writing-seo-contact__form h2 {
+    color: var(--color-white);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.18;
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.writing-seo-contact__form .field {
+    margin-bottom: 18px;
+}
+
+.writing-seo-contact__form .field>span:first-child {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 8px;
+}
+
+.writing-seo-contact__form .field input,
+.writing-seo-contact__form .field select {
+    min-height: 50px;
+    border-radius: 6px;
+}
+
+.writing-seo-contact__submit {
+    width: 100%;
+    min-height: 112px;
+    border: 2px solid var(--color-accent);
+    border-radius: 22px;
+    background: transparent;
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.writing-seo-contact__submit-icon {
+    font-size: 26px;
+}
+
+.writing-seo-contact__faq .faq-item {
+    background: transparent;
+    margin-bottom: 15px;
+    padding: 12px 18px;
+}
+
+.writing-seo-contact__faq .faq-item summary {
+    font-weight: 400;
+}
+
+.writing-seo-contact__faq .faq-item summary i {
+    width: 20px;
+    height: 20px;
+    font-size: 9px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+
+    .writing-seo-hero__inner,
+    .writing-seo-value__inner,
+    .writing-seo-problem__head,
+    .writing-seo-contact__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .writing-seo-search {
+        justify-self: stretch;
+        max-width: none;
+    }
+
+    .writing-seo-value__inner {
+        gap: 32px;
+    }
+
+    .writing-seo-problem__head {
+        gap: 18px;
+    }
+
+    .writing-seo-problem__card {
+        grid-template-columns: 1fr;
+    }
+
+    .writing-seo-problem__list {
+        border-right: 0;
+        border-bottom: 1px solid #8b95a5;
+        padding: 30px 22px;
+    }
+
+    .writing-seo-control__body {
+        grid-template-columns: 1fr;
+    }
+
+    .writing-seo-control__icon {
+        order: -1;
+    }
+
+    .writing-seo-control__icon img {
+        width: 220px;
+    }
+
+    .writing-seo-workflow__panel {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .writing-seo-pricing .pricing__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .writing-seo-blog .blog__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .writing-seo-hero__title {
+        font-size: 34px;
+    }
+
+    .writing-seo-value__content h2,
+    .writing-seo-problem__head h2,
+    .writing-seo-control__title,
+    .writing-seo-workflow__title,
+    .writing-seo-blog__title {
+        font-size: 28px;
+    }
+
+    .writing-seo-problem__head p {
+        font-size: 17px;
+    }
+
+    .writing-seo-problem__detail {
+        padding: 24px 20px;
+    }
+
+    .writing-seo-problem__detail h3 {
+        font-size: 24px;
+    }
+
+    .writing-seo-problem__detail>p {
+        font-size: 16px;
+    }
+
+    .writing-seo-control__tabs,
+    .writing-seo-workflow__tabs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .writing-seo-control__tabs button {
+        min-height: 48px;
+        font-size: 16px;
+    }
+
+    .writing-seo-control__body {
+        min-height: auto;
+        padding: 28px 20px;
+    }
+
+    .writing-seo-control__content h3 {
+        font-size: 26px;
+    }
+
+    .writing-seo-control__meta {
+        grid-template-columns: 1fr;
+        margin-top: 26px;
+        text-align: left;
+    }
+
+    .writing-seo-workflow__tabs button {
+        min-height: 86px;
+    }
+
+    .writing-seo-workflow__panel {
+        padding: 24px 20px;
+    }
+
+    .writing-seo-pricing .pricing__grid,
+    .writing-seo-blog .blog__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .writing-seo-partners .partners__logo {
+        height: 56px;
+        padding: 0 24px;
+    }
+}

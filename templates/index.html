@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hanoiweb AI Chatbot</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+
+            width: 420px;
+            height: 650px;
+
+            background: white;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.15);
+
+            display: flex;
+            flex-direction: column;
+
+            overflow: hidden;
+        }
+
+        /* HEADER */
+
+        .chat-header {
+
+            background: #0066cc;
+
+            color: white;
+
+            padding: 18px;
+
+            text-align: center;
+        }
+
+        .chat-header h2 {
+
+            font-size: 20px;
+
+            margin-bottom: 5px;
+        }
+
+        .chat-header p {
+
+            font-size: 13px;
+
+            opacity: 0.9;
+        }
+
+
+        /* CHAT AREA */
+
+        .chat-messages {
+
+            flex: 1;
+
+            padding: 20px;
+
+            overflow-y: auto;
+
+            background: #f8f9fa;
+        }
+
+
+        /* MESSAGE */
+
+        .message {
+
+            margin-bottom: 15px;
+
+            display: flex;
+        }
+
+        .message.user {
+
+            justify-content: flex-end;
+        }
+
+        .message.bot {
+
+            justify-content: flex-start;
+        }
+
+        .message-content {
+
+            max-width: 80%;
+
+            padding: 12px 15px;
+
+            border-radius: 12px;
+
+            line-height: 1.5;
+
+            font-size: 14px;
+
+            white-space: pre-wrap;
+        }
+
+        .user .message-content {
+
+            background: #0066cc;
+
+            color: white;
+
+            border-bottom-right-radius: 3px;
+        }
+
+        .bot .message-content {
+
+            background: #e9ecef;
+
+            color: #222;
+
+            border-bottom-left-radius: 3px;
+        }
+
+
+        /* INPUT */
+
+        .chat-input {
+
+            display: flex;
+
+            padding: 12px;
+
+            border-top: 1px solid #ddd;
+
+            background: white;
+        }
+
+        .chat-input input {
+
+            flex: 1;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            font-size: 14px;
+        }
+
+        .chat-input input:focus {
+
+            border-color: #0066cc;
+        }
+
+        .chat-input button {
+
+            margin-left: 8px;
+
+            padding: 0 18px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #0066cc;
+
+            color: white;
+
+            cursor: pointer;
+        }
+
+        .chat-input button:hover {
+
+            background: #0052a3;
+        }
+
+        .chat-input button:disabled {
+
+            background: #aaa;
+
+            cursor: not-allowed;
+        }
+
+
+        /* STATUS */
+
+        .status {
+
+            text-align: center;
+
+            padding: 5px;
+
+            font-size: 12px;
+
+            color: #777;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="chat-container">
+
+
+        <div class="chat-header">
+
+            <h2>Hanoiweb AI Chatbot</h2>
+
+            <p>Trợ lý AI hỗ trợ thông tin Hanoiweb</p>
+
+        </div>
+
+
+        <div id="chatMessages" class="chat-messages">
+
+            <div class="message bot">
+
+                <div class="message-content">Xin chào! Tôi là trợ lý AI của Hanoiweb. Bạn có thể hỏi tôi về dịch vụ, giá cả và các thông tin có trong cơ sở dữ liệu.</div>
+
+            </div>
+
+        </div>
+
+
+        <div id="status" class="status">
+            Đang hoạt động
+        </div>
+
+
+        <div class="chat-input">
+
+            <input id="questionInput" type="text" placeholder="Nhập câu hỏi..." autocomplete="off">
+
+            <button id="sendButton" onclick="sendMessage()">
+                Gửi
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+        /*
+         * SESSION ID
+         *
+         * Flask sẽ truyền session_id vào đây.
+         * Sau này dùng cùng ID này cho:
+         *
+         * - Lịch sử chat
+         * - Theo dõi hành vi
+         * - Phân tích khách hàng
+         */
+
+        const SESSION_ID = "{{ session_id }}";
+
+        const input =
+            document.getElementById("questionInput");
+
+        const sendButton =
+            document.getElementById("sendButton");
+
+        const messages =
+            document.getElementById("chatMessages");
+
+        const status =
+            document.getElementById("status");
+
+
+        // Nhấn Enter để gửi
+
+        input.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Enter") {
+
+                    sendMessage();
+
+                }
+
+            }
+        );
+
+
+        // Thêm message vào giao diện
+
+        function addMessage(text, type) {
+
+            const message =
+                document.createElement("div");
+
+            message.className =
+                `message ${type}`;
+
+
+            const content =
+                document.createElement("div");
+
+            content.className =
+                "message-content";
+
+            content.textContent = text;
+
+
+            message.appendChild(content);
+
+            messages.appendChild(message);
+
+
+            // Scroll xuống cuối
+
+            messages.scrollTop =
+                messages.scrollHeight;
+
+        }
+
+
+        // Gửi câu hỏi
+
+        async function sendMessage() {
+
+            const question =
+                input.value.trim();
+
+
+            if (!question) {
+
+                return;
+
+            }
+
+
+            // Hiển thị câu hỏi
+
+            addMessage(
+                question,
+                "user"
+            );
+
+
+            // Xóa input
+
+            input.value = "";
+
+
+            // Disable
+
+            input.disabled = true;
+
+            sendButton.disabled = true;
+
+
+            status.textContent =
+                "Chatbot đang suy nghĩ...";
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/chat",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+
+                                question: question
+
+                            })
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                // Hiển thị câu trả lời
+
+                addMessage(
+                    data.answer,
+                    "bot"
+                );
+
+
+                // Nếu chatbot kết thúc
+
+                if (data.ended) {
+
+                    input.disabled = true;
+
+                    sendButton.disabled = true;
+
+                    status.textContent =
+                        "Cuộc trò chuyện đã kết thúc.";
+
+                }
+
+                else {
+
+                    input.disabled = false;
+
+                    sendButton.disabled = false;
+
+                    status.textContent =
+                        "Đang hoạt động";
+
+                    input.focus();
+
+                }
+
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Chat error:",
+                    error
+                );
+
+
+                addMessage(
+                    "Không thể kết nối tới server.",
+                    "bot"
+                );
+
+
+                input.disabled = false;
+
+                sendButton.disabled = false;
+
+                status.textContent =
+                    "Lỗi kết nối";
+
+            }
+
+        }
+
+
+        // ==============================
+        // NHẬN TIN NHẮN CHỦ ĐỘNG TỪ SERVER (SSE)
+        // ==============================
+
+        const proactiveStream =
+            new EventSource("/stream");
+
+        proactiveStream.onmessage =
+            function (event) {
+
+                const data =
+                    JSON.parse(event.data);
+
+                addMessage(
+                    data.message,
+                    "bot"
+                );
+
+            };
+
+        proactiveStream.onerror =
+            function (error) {
+
+                console.error(
+                    "Proactive stream error:",
+                    error
+                );
+
+            };
+
+    </script>
+    <script>
+
+        // ==============================
+        // VISITOR BEHAVIOR TRACKING
+        // ==============================
+
+        // Thời điểm khách bắt đầu visit hiện tại
+        let pageEnterTime = Date.now();
+
+        // ID riêng cho mỗi lần truy cập / reload trang
+        const VISIT_ID =
+            Date.now().toString() +
+            "-" +
+            Math.random().toString(36).substring(2);
+
+        // Độ sâu scroll lớn nhất trong visit hiện tại
+        let maxScrollDepth = 0;
+
+        // Thời điểm hoạt động cuối cùng của khách
+        let lastActivityTime = Date.now();
+
+        // Trạng thái idle
+        let isIdle = false;
+
+        // 5 phút không hoạt động = idle
+        const IDLE_TIME = 5 * 60 * 1000;
+
+
+        // ==============================
+        // GHI NHẬN HOẠT ĐỘNG
+        // ==============================
+
+        function recordActivity() {
+
+            lastActivityTime = Date.now();
+
+            if (isIdle) {
+
+                isIdle = false;
+
+                sendBehavior("active");
+
+            }
+
+        }
+
+
+        // ==============================
+        // THEO DÕI SCROLL
+        // ==============================
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                recordActivity();
+
+                const scrollTop =
+                    window.scrollY;
+
+                const documentHeight =
+                    document.documentElement.scrollHeight
+                    - window.innerHeight;
+
+                if (documentHeight <= 0) {
+
+                    return;
+
+                }
+
+                const scrollPercent =
+                    Math.round(
+                        (scrollTop / documentHeight) * 100
+                    );
+
+                maxScrollDepth =
+                    Math.max(
+                        maxScrollDepth,
+                        scrollPercent
+                    );
+
+            }
+        );
+
+
+        // ==============================
+        // THEO DÕI CLICK
+        // ==============================
+
+        window.addEventListener(
+            "click",
+            function () {
+
+                recordActivity();
+
+            }
+        );
+
+
+        // ==============================
+        // THEO DÕI KEYBOARD
+        // ==============================
+
+        window.addEventListener(
+            "keydown",
+            function () {
+
+                recordActivity();
+
+            }
+        );
+
+
+        // ==============================
+        // THEO DÕI MOUSE
+        // ==============================
+
+        window.addEventListener(
+            "mousemove",
+            function () {
+
+                recordActivity();
+
+            }
+        );
+
+
+        // ==============================
+        // THEO DÕI TOUCH
+        // ==============================
+
+        window.addEventListener(
+            "touchstart",
+            function () {
+
+                recordActivity();
+
+            }
+        );
+
+
+        // ==============================
+        // KIỂM TRA IDLE
+        // ==============================
+
+        setInterval(
+            function () {
+
+                const inactiveTime =
+                    Date.now() - lastActivityTime;
+
+                if (
+                    inactiveTime >= IDLE_TIME
+                    && !isIdle
+                ) {
+
+                    isIdle = true;
+
+                    sendBehavior(
+                        "idle_start"
+                    );
+
+                }
+
+            },
+            10000
+        );
+
+
+        // ==============================
+        // GỬI DỮ LIỆU VỀ FLASK
+        // ==============================
+
+        async function sendBehavior(eventName) {
+
+            const timeOnPage =
+                Math.floor(
+                    (Date.now() - pageEnterTime) / 1000
+                );
+
+            const idleTime =
+                Math.floor(
+                    (Date.now() - lastActivityTime) / 1000
+                );
+
+
+            try {
+
+                await fetch(
+                    "/behavior",
+                    {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body: JSON.stringify({
+
+                            // Session của visitor
+                            session_id:
+                                SESSION_ID,
+
+                            // Visit hiện tại
+                            visit_id:
+                                VISIT_ID,
+
+                            // Trang hiện tại
+                            url:
+                                window.location.pathname,
+
+                            // Tiêu đề trang
+                            title:
+                                document.title,
+
+                            // Thời gian của visit hiện tại
+                            time_on_page:
+                                timeOnPage,
+
+                            // Scroll sâu nhất
+                            scroll_depth:
+                                maxScrollDepth,
+
+                            // Thời gian idle
+                            idle_time:
+                                idleTime,
+
+                            // Loại event
+                            event:
+                                eventName
+
+                        })
+
+                    }
+                );
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Behavior tracking error:",
+                    error
+                );
+
+            }
+
+        }
+
+
+        // ==============================
+        // GỬI DỮ LIỆU MỖI 30 GIÂY
+        // ==============================
+
+        setInterval(
+            function () {
+
+                sendBehavior(
+                    "page_activity"
+                );
+
+            },
+            30000
+        );
+
+
+        // ==============================
+        // KHI KHÁCH RỜI TRANG
+        // ==============================
+
+        window.addEventListener(
+            "beforeunload",
+            function () {
+
+                const timeOnPage =
+                    Math.floor(
+                        (Date.now() - pageEnterTime) / 1000
+                    );
+
+                const idleTime =
+                    Math.floor(
+                        (Date.now() - lastActivityTime) / 1000
+                    );
+
+
+                const data =
+                    JSON.stringify({
+
+                        // Session của visitor
+                        session_id:
+                            SESSION_ID,
+
+                        // Visit hiện tại
+                        visit_id:
+                            VISIT_ID,
+
+                        // Trang hiện tại
+                        url:
+                            window.location.pathname,
+
+                        // Tiêu đề trang
+                        title:
+                            document.title,
+
+                        // Thời gian của visit hiện tại
+                        time_on_page:
+                            timeOnPage,
+
+                        // Scroll sâu nhất
+                        scroll_depth:
+                            maxScrollDepth,
+
+                        // Thời gian idle
+                        idle_time:
+                            idleTime,
+
+                        // Event rời trang
+                        event:
+                            "page_leave"
+
+                    });
+
+
+                navigator.sendBeacon(
+                    "/behavior",
+                    new Blob(
+                        [data],
+                        {
+                            type:
+                                "application/json"
+                        }
+                    )
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

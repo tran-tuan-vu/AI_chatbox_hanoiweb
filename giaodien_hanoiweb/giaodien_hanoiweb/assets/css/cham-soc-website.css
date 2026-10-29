@@ -1,0 +1,972 @@
+/* ========================================================================== 
+   Dịch vụ chăm sóc website - HanoiWeb
+   HTML/CSS thuần, BEM-like, dùng design token và component chung hiện tại.
+   ========================================================================== */
+
+.webcare-page {
+    background: var(--color-white);
+    color: var(--color-gray-900);
+}
+
+/* ---------- Hero ---------- */
+.webcare-hero {
+    background: var(--color-white);
+    padding: 58px 0 48px;
+}
+
+.webcare-hero__inner {
+    display: grid;
+    grid-template-columns: 1.03fr 1fr;
+    gap: 68px;
+    align-items: center;
+}
+
+.webcare-hero__title {
+    max-width: 620px;
+    color: var(--color-primary);
+    font-size: 48px;
+    line-height: 1.18;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.webcare-hero__desc {
+    max-width: 610px;
+    color: var(--color-gray-700);
+    font-size: 17px;
+    line-height: 1.48;
+    margin-bottom: 24px;
+}
+
+.webcare-hero__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.webcare-hero__actions .btn {
+    min-height: 48px;
+    padding: 12px 20px;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.webcare-hero__actions .btn--outline-accent {
+    background: var(--color-white);
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+}
+
+.webcare-hero__media {
+    border: 1px solid var(--color-gray-300);
+    border-radius: 28px;
+    overflow: hidden;
+    background: var(--color-gray-50);
+}
+
+.webcare-hero__media img {
+    width: 100%;
+    aspect-ratio: 1.38 / 1;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+/* ---------- Overview ---------- */
+.webcare-overview {
+    background: var(--color-white);
+    padding: 28px 0 52px;
+}
+
+.webcare-overview__title {
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.webcare-overview__inner {
+    display: grid;
+    grid-template-columns: 1.12fr 1fr;
+    gap: 62px;
+    align-items: center;
+}
+
+.webcare-overview__media {
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.webcare-overview__media img {
+    width: 100%;
+    aspect-ratio: 1.58 / 1;
+    object-fit: cover;
+    object-position: center 46%;
+    display: block;
+}
+
+.webcare-overview__lead {
+    color: var(--color-gray-700);
+    font-size: 18px;
+    line-height: 1.45;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.webcare-overview__point {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 10px;
+    align-items: start;
+    padding: 12px 0;
+    border-top: 1px solid #7d8795;
+}
+
+.webcare-overview__point>span {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.webcare-overview__point h3 {
+    color: var(--color-gray-700);
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.webcare-overview__point p {
+    color: var(--color-gray-700);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* ---------- Problem ---------- */
+.webcare-problem {
+    background: #f3f4f6;
+    padding: 38px 0 54px;
+}
+
+.webcare-problem__head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 74px;
+    align-items: start;
+    margin-bottom: 42px;
+}
+
+.webcare-problem__head h2 {
+    color: var(--color-primary);
+    font-size: 38px;
+    line-height: 1.18;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.webcare-problem__head p {
+    color: var(--color-gray-700);
+    font-size: 18px;
+    line-height: 1.4;
+    padding-top: 16px;
+}
+
+.webcare-problem__card {
+    display: grid;
+    grid-template-columns: .95fr 1.1fr;
+    background: var(--color-white);
+    border: 1px solid #7f8997;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 5px rgba(18, 20, 28, .2);
+}
+
+.webcare-problem__list {
+    padding: 62px 22px;
+    border-right: 1px solid #7f8997;
+}
+
+.webcare-problem__item {
+    min-height: 56px;
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    align-items: center;
+    gap: 18px;
+    padding: 0 16px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    color: var(--color-gray-700);
+}
+
+.webcare-problem__item:last-child {
+    margin-bottom: 0;
+}
+
+.webcare-problem__item strong {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.webcare-problem__num {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.webcare-problem__item.is-active {
+    background: #2097a1;
+    color: var(--color-white);
+}
+
+.webcare-problem__item.is-active .webcare-problem__num {
+    color: #70dce3;
+}
+
+.webcare-problem__detail {
+    padding: 26px 42px 28px 48px;
+}
+
+.webcare-problem__detail h3 {
+    color: var(--color-teal-700);
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 26px;
+}
+
+.webcare-problem__detail>p {
+    color: var(--color-gray-700);
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.webcare-problem__detail ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.webcare-problem__detail li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: var(--color-gray-900);
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.webcare-problem__detail li i {
+    margin-top: 4px;
+}
+
+/* ---------- Work system ---------- */
+.webcare-system {
+    background: var(--color-white);
+    padding: 38px 0 54px;
+}
+
+.webcare-system__title,
+.webcare-work__title {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.webcare-system__grid {
+    display: grid;
+    grid-template-columns: 1.18fr .9fr;
+    gap: 20px;
+}
+
+.webcare-system__panel {
+    min-height: 365px;
+    border-radius: 22px;
+    background: #d8f5f7;
+    padding: 54px 34px 36px;
+}
+
+.webcare-system__eyebrow {
+    color: var(--color-accent);
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.webcare-system__panel h3 {
+    color: var(--color-primary);
+    font-size: 29px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.webcare-system__lead {
+    color: var(--color-gray-900);
+    font-size: 18px;
+    line-height: 1.42;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.webcare-system__panel ul {
+    padding-left: 22px;
+    margin: 0;
+    color: var(--color-gray-900);
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.webcare-system__tabs {
+    display: grid;
+    gap: 18px;
+    align-content: stretch;
+}
+
+.webcare-system__tabs button,
+.webcare-work__tabs button {
+    width: 100%;
+    min-height: 74px;
+    border: 2px solid var(--color-primary);
+    border-radius: 13px;
+    background: var(--color-white);
+    color: var(--color-gray-900);
+    text-align: left;
+    padding: 0 18px;
+    font: inherit;
+    font-size: 21px;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(18, 20, 28, .16);
+}
+
+.webcare-system__tabs button.is-active,
+.webcare-work__tabs button.is-active {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    box-shadow: 0 3px 5px rgba(245, 130, 15, .25);
+}
+
+/* ---------- Weekly care ---------- */
+.webcare-work {
+    background: #f3f4f6;
+    padding: 38px 0 54px;
+}
+
+.webcare-work__grid {
+    display: grid;
+    grid-template-columns: .86fr 1.18fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.webcare-work__tabs {
+    display: grid;
+    gap: 18px;
+}
+
+.webcare-work__panel {
+    min-height: 418px;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 30px;
+    align-items: center;
+    border: 1px solid #7f8997;
+    border-radius: 18px;
+    background: var(--color-white);
+    padding: 30px 20px 30px 36px;
+}
+
+.webcare-work__copy h3 {
+    color: var(--color-primary);
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.webcare-work__copy p {
+    color: var(--color-gray-900);
+    font-size: 19px;
+    line-height: 1.4;
+    font-weight: 600;
+    max-width: 410px;
+}
+
+.webcare-work__media {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.webcare-work__media img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+/* ---------- Projects ---------- */
+.webcare-projects {
+    padding: 38px 0 50px;
+}
+
+.webcare-section-head {
+    margin-bottom: 22px;
+}
+
+.webcare-section-head .h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.webcare-projects .project-card {
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.webcare-projects .ph-project {
+    overflow: hidden;
+}
+
+.webcare-projects .ph-project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------- Pricing ---------- */
+.webcare-pricing {
+    background: #f3f4f6;
+    padding: 38px 0 48px;
+    scroll-margin-top: calc(var(--header-height, 0px) + 20px);
+}
+
+.webcare-pricing__head {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.webcare-pricing__head h2 {
+    color: var(--color-primary);
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.webcare-pricing__head p {
+    color: var(--color-gray-500);
+    font-size: 15px;
+}
+
+.webcare-pricing__table-wrap {
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--color-white);
+    box-shadow: 0 3px 5px rgba(18, 20, 28, .2);
+}
+
+.webcare-pricing__table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 16px;
+}
+
+.webcare-pricing__table th,
+.webcare-pricing__table td {
+    border-right: 1px solid #8c96a3;
+    border-bottom: 1px solid #d5dae1;
+    padding: 13px 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.webcare-pricing__table tr:last-child th,
+.webcare-pricing__table tr:last-child td {
+    border-bottom: 0;
+}
+
+.webcare-pricing__table th:last-child,
+.webcare-pricing__table td:last-child {
+    border-right: 0;
+}
+
+.webcare-pricing__table thead th {
+    color: var(--color-teal-900);
+    background: var(--color-white);
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.webcare-pricing__table thead th:first-child {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.webcare-pricing__table thead strong {
+    display: inline-block;
+    margin-top: 6px;
+    color: var(--color-gray-900);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.webcare-pricing__table tbody th {
+    color: var(--color-gray-900);
+    background: var(--color-white);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.webcare-pricing__table .is-featured {
+    background: #0b4d50;
+    color: var(--color-white);
+}
+
+.webcare-pricing__table thead .is-featured strong {
+    color: var(--color-white);
+}
+
+.webcare-pricing__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+}
+
+.webcare-pricing__cta .btn {
+    min-height: 42px;
+    padding: 9px 16px;
+    border-width: 2px;
+    gap: 8px;
+}
+
+/* ---------- Partners ---------- */
+.webcare-partners {
+    min-height: 210px;
+    padding: 24px 0 18px;
+    background: linear-gradient(90deg, #08484d 0%, #168d95 60%, #15919b 100%);
+}
+
+.webcare-partners .partners__title {
+    font-size: 30px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.webcare-partners .partners__logo {
+    height: 76px;
+    max-width: 260px;
+    padding: 0 42px;
+}
+
+/* ---------- Blog ---------- */
+.webcare-blog {
+    padding: 36px 0 48px;
+}
+
+.webcare-blog__title {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.webcare-blog .blog__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.webcare-blog .blog-card {
+    min-height: 450px;
+    border-radius: 18px;
+}
+
+.webcare-blog .blog-card .h4 {
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 500;
+    min-height: 110px;
+}
+
+.webcare-blog .ph-blog {
+    aspect-ratio: 1.35 / 1;
+    overflow: hidden;
+}
+
+.webcare-blog .ph-blog img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.webcare-blog__pagination {
+    margin-top: 14px;
+}
+
+/* ---------- Form + FAQ ---------- */
+.webcare-contact {
+    background: #f3f4f6;
+    padding: 42px 0 52px;
+    scroll-margin-top: calc(var(--header-height, 0px) + 20px);
+}
+
+.webcare-contact__inner {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+    gap: 18px;
+}
+
+.webcare-contact__form {
+    background: #2c9ba4;
+    border-radius: 28px;
+    padding: 24px 20px 20px;
+}
+
+.webcare-contact__form h2 {
+    color: var(--color-white);
+    text-align: center;
+    font-size: 26px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.webcare-contact__form .field {
+    display: block;
+    margin-bottom: 14px;
+}
+
+.webcare-contact__form .field>span:first-child {
+    display: block;
+    color: var(--color-white);
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.webcare-contact__form input,
+.webcare-contact__form select {
+    width: 100%;
+    min-height: 48px;
+    border: 0;
+    border-radius: 5px;
+    background: var(--color-white);
+    color: var(--color-gray-700);
+    padding: 0 16px;
+    font: inherit;
+}
+
+.webcare-contact__form .select-wrap {
+    position: relative;
+    display: block;
+}
+
+.webcare-contact__form select {
+    appearance: none;
+}
+
+.webcare-contact__form .select-wrap__icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-gray-500);
+    pointer-events: none;
+}
+
+.webcare-contact__submit {
+    width: 100%;
+    min-height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 2px solid var(--color-accent);
+    border-radius: 24px;
+    background: transparent;
+    color: var(--color-accent);
+    font: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.webcare-contact__submit-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #bde6ff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.webcare-contact__faq {
+    display: grid;
+    gap: 14px;
+    padding-left: 4px;
+}
+
+.webcare-contact__faq .faq-item {
+    border: 1px solid #657180;
+    border-radius: 8px;
+    background: transparent;
+    overflow: hidden;
+}
+
+.webcare-contact__faq .faq-item summary {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 18px;
+    color: var(--color-gray-900);
+    font-size: 14px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.webcare-contact__faq .faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+    .webcare-hero__title {
+        font-size: 42px;
+    }
+
+    .webcare-hero__inner {
+        gap: 42px;
+    }
+
+    .webcare-overview__inner {
+        gap: 38px;
+    }
+
+    .webcare-problem__head {
+        gap: 38px;
+    }
+
+    .webcare-pricing__table {
+        font-size: 14px;
+    }
+
+    .webcare-pricing__table th,
+    .webcare-pricing__table td {
+        padding: 11px 8px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .webcare-hero__inner,
+    .webcare-overview__inner,
+    .webcare-problem__head,
+    .webcare-system__grid,
+    .webcare-work__grid,
+    .webcare-contact__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .webcare-hero__content {
+        order: 1;
+    }
+
+    .webcare-hero__media {
+        order: 2;
+    }
+
+    .webcare-hero__title,
+    .webcare-hero__desc {
+        max-width: 760px;
+    }
+
+    .webcare-overview__title br {
+        display: none;
+    }
+
+    .webcare-problem__head {
+        margin-bottom: 24px;
+    }
+
+    .webcare-problem__head p {
+        padding-top: 0;
+    }
+
+    .webcare-problem__card {
+        grid-template-columns: 1fr;
+    }
+
+    .webcare-problem__list {
+        border-right: 0;
+        border-bottom: 1px solid #7f8997;
+        padding: 28px 22px;
+    }
+
+    .webcare-system__tabs,
+    .webcare-work__tabs {
+        gap: 12px;
+    }
+
+    .webcare-system__tabs button,
+    .webcare-work__tabs button {
+        min-height: 60px;
+    }
+
+    .webcare-work__panel {
+        min-height: 0;
+    }
+
+    .webcare-pricing__table-wrap {
+        overflow-x: auto;
+    }
+
+    .webcare-pricing__table {
+        min-width: 820px;
+    }
+
+    .webcare-blog .blog__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .webcare-hero {
+        padding: 36px 0 32px;
+    }
+
+    .webcare-hero__title {
+        font-size: 34px;
+    }
+
+    .webcare-hero__desc {
+        font-size: 16px;
+    }
+
+    .webcare-hero__actions {
+        align-items: stretch;
+    }
+
+    .webcare-hero__actions .btn {
+        width: 100%;
+    }
+
+    .webcare-overview__title,
+    .webcare-system__title,
+    .webcare-work__title,
+    .webcare-pricing__head h2,
+    .webcare-blog__title {
+        font-size: 27px;
+    }
+
+    .webcare-problem__head h2 {
+        font-size: 30px;
+    }
+
+    .webcare-problem__list {
+        padding: 20px 12px;
+    }
+
+    .webcare-problem__item {
+        grid-template-columns: 44px 1fr;
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .webcare-problem__item strong {
+        font-size: 16px;
+    }
+
+    .webcare-problem__detail {
+        padding: 24px 20px;
+    }
+
+    .webcare-problem__detail h3 {
+        font-size: 23px;
+    }
+
+    .webcare-system__panel {
+        min-height: 0;
+        padding: 30px 20px;
+    }
+
+    .webcare-system__panel h3 {
+        font-size: 24px;
+    }
+
+    .webcare-system__tabs button,
+    .webcare-work__tabs button {
+        font-size: 18px;
+    }
+
+    .webcare-work__panel {
+        grid-template-columns: 1fr;
+        padding: 22px 18px;
+    }
+
+    .webcare-work__media {
+        max-width: 280px;
+    }
+
+    .webcare-partners {
+        min-height: 170px;
+    }
+
+    .webcare-partners .partners__title {
+        font-size: 24px;
+    }
+
+    .webcare-partners .partners__logo {
+        height: 58px;
+        padding: 0 28px;
+    }
+
+    .webcare-blog .blog__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .webcare-blog .blog-card .h4 {
+        min-height: auto;
+    }
+
+    .webcare-contact__form {
+        border-radius: 22px;
+    }
+
+    .webcare-contact__submit {
+        min-height: 72px;
+    }
+}

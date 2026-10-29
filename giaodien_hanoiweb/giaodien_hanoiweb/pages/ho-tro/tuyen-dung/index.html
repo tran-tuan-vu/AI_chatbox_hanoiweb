@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Tuyển Dụng - HanoiWeb</title>
+    <meta name="description"
+        content="Tuyển dụng tại HanoiWeb: cơ hội cùng xây dựng những website chất lượng, làm việc với đội ngũ chuyên nghiệp và khách hàng thực tế." />
+    <link rel="icon" href="/assets/images/logo/logo-hanoiweb.png" />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="../../../assets/css/variables.css" />
+    <link rel="stylesheet" href="../../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../../assets/css/tuyen-dung.css" />
+</head>
+
+<body>
+    <div id="site-header"></div>
+
+    <main>
+        <section class="jobs-hero">
+            <div class="container jobs-hero__inner">
+                <div class="jobs-hero__content">
+                    <h1 class="jobs-hero__title">
+                        <span class="text-primary">Cùng Xây Những Website Khiến</span>
+                        <span class="text-accent">Khách Hàng Hài Lòng</span>
+                    </h1>
+                    <p class="jobs-hero__desc">
+                        HanoiWeb đang tìm những người thích giải quyết vấn đề rõ ràng, làm việc có trách nhiệm và sẵn
+                        sàng nói
+                        chuyện với khách hàng bằng ngôn ngữ dễ hiểu.
+                    </p>
+                    <div class="jobs-hero__actions">
+                        <a class="btn btn--accent btn--pill" href="#jobs-list">Xem vị trí đang mở</a>
+                        <a class="btn btn--outline-primary btn--pill" href="#jobs-apply">Gửi CV tự do</a>
+                    </div>
+                </div>
+                <div class="jobs-hero__media">
+                    <img src="../../../assets/images/banner/news1.jpg" alt="Đội ngũ HanoiWeb" />
+                </div>
+            </div>
+        </section>
+
+        <section class="jobs-values" data-reveal>
+            <div class="container jobs-values__inner">
+                <div class="jobs-values__media">
+                    <img src="../../../assets/images/banner/banner-ft.png" alt="Nhân vật mascot HanoiWeb" />
+                </div>
+                <div class="jobs-values__list">
+                    <div class="value-row">
+                        <span class="value-row__num">01</span>
+                        <div>
+                            <span class="value-row__eyebrow">Ownership</span>
+                            <h3 class="value-row__title">Nhận việc đến khi có kết quả</h3>
+                            <p class="value-row__desc">
+                                Không dừng ở "đã gửi file". Mỗi đầu việc cần có người chịu trách nhiệm, trạng thái và
+                                tiêu chí
+                                hoàn thành.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="value-row">
+                        <span class="value-row__num">02</span>
+                        <div>
+                            <span class="value-row__eyebrow">Clarity</span>
+                            <h3 class="value-row__title">Nói rõ, viết rõ, làm rõ</h3>
+                            <p class="value-row__desc">
+                                Khách hàng không cần thuật ngữ kỹ thuật. Họ cần biết vấn đề, phương án, thời gian và
+                                việc cần
+                                quyết định.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="value-row">
+                        <span class="value-row__num">03</span>
+                        <div>
+                            <span class="value-row__eyebrow">Craft</span>
+                            <h3 class="value-row__title">Chất lượng nằm trong chi tiết</h3>
+                            <p class="value-row__desc">
+                                Từ khoảng cách giao diện, câu chữ CTA đến cách đặt tên file đều phản ánh chất lượng công
+                                việc.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="value-row">
+                        <span class="value-row__num">04</span>
+                        <div>
+                            <span class="value-row__eyebrow">Learning</span>
+                            <h3 class="value-row__title">Cập nhật nhưng không chạy theo trào lưu</h3>
+                            <p class="value-row__desc">
+                                Học công nghệ mới để giải quyết vấn đề tốt hơn, không dùng công cụ mới chỉ vì nó đang
+                                phổ biến.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="jobs-list" id="jobs-list" data-reveal>
+            <div class="container">
+                <h2 class="jobs-list__title">Tìm Công Việc Phù Hợp Với Cách Bạn Muốn Phát Triển</h2>
+
+                <div class="jobs-filters">
+                    <span class="select-wrap" data-filter="group">
+                        <select>
+                            <option value="all">Tất cả nhóm vị trí</option>
+                            <option value="kinh-doanh">Kinh doanh</option>
+                            <option value="it">IT</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down select-wrap__icon"></i>
+                    </span>
+                    <span class="select-wrap" data-filter="location">
+                        <select>
+                            <option value="all">Tất cả địa điểm</option>
+                            <option value="ha-noi">Hà Nội</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down select-wrap__icon"></i>
+                    </span>
+                    <span class="select-wrap" data-filter="format">
+                        <select>
+                            <option value="all">Tất cả hình thức</option>
+                            <option value="toan-thoi-gian">Toàn thời gian</option>
+                            <option value="theo-thong-bao">Theo thông báo tuyển dụng</option>
+                            <option value="trao-doi">Trao đổi</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down select-wrap__icon"></i>
+                    </span>
+                </div>
+                <p class="jobs-empty" id="jobs-empty" hidden>Không có vị trí phù hợp với bộ lọc. Hãy thử "Tất cả" hoặc
+                    gửi CV tự do bên dưới.</p>
+
+                <div class="jobs-grid">
+                    <article class="job-card" data-group="kinh-doanh" data-location="ha-noi"
+                        data-format="toan-thoi-gian">
+                        <div class="job-card__tags">
+                            <span class="tag">Kinh doanh</span>
+                            <span class="tag">Hà Nội</span>
+                            <span class="tag">03 vị trí</span>
+                        </div>
+                        <h3 class="job-card__title">Nhân viên văn phòng – Tư vấn khách hàng</h3>
+                        <p class="job-card__desc">
+                            Tiếp nhận nhu cầu, làm rõ bài toán website và phối hợp với đội dự án để đề xuất giải pháp
+                            phù hợp.
+                        </p>
+                        <div class="job-card__meta">
+                            <div>
+                                <p class="job-card__meta-label">Thu nhập công khai</p>
+                                <p class="job-card__meta-value">8–15 triệu + thưởng</p>
+                            </div>
+                            <div>
+                                <p class="job-card__meta-label">Hình thức</p>
+                                <p class="job-card__meta-value">Toàn thời gian</p>
+                            </div>
+                            <div>
+                                <p class="job-card__meta-label">Địa điểm</p>
+                                <p class="job-card__meta-value">Cầu Giấy</p>
+                            </div>
+                        </div>
+                        <a class="btn btn--accent btn--pill" href="#jobs-apply">Ứng tuyển vị trí này</a>
+                    </article>
+
+                    <article class="job-card" data-group="it" data-location="ha-noi" data-format="theo-thong-bao">
+                        <div class="job-card__tags">
+                            <span class="tag">IT</span>
+                            <span class="tag">WordPress</span>
+                            <span class="tag">Hà Nội</span>
+                        </div>
+                        <h3 class="job-card__title">Lập trình viên WordPress</h3>
+                        <p class="job-card__desc">
+                            Phát triển, tối ưu và bảo trì website WordPress; phối hợp với designer và account để bàn
+                            giao đúng
+                            yêu cầu.
+                        </p>
+                        <div class="job-card__meta">
+                            <div>
+                                <p class="job-card__meta-label">Kinh nghiệm</p>
+                                <p class="job-card__meta-value">Trao đổi</p>
+                            </div>
+                            <div>
+                                <p class="job-card__meta-label">Hình thức</p>
+                                <p class="job-card__meta-value">Theo thông báo tuyển dụng</p>
+                            </div>
+                            <div>
+                                <p class="job-card__meta-label">Địa điểm</p>
+                                <p class="job-card__meta-value">Cầu Giấy</p>
+                            </div>
+                        </div>
+                        <a class="btn btn--accent btn--pill" href="#jobs-apply">Gửi hồ sơ</a>
+                    </article>
+
+                    <article class="job-card" data-group="kinh-doanh" data-location="ha-noi" data-format="trao-doi">
+                        <div class="job-card__tags">
+                            <span class="tag">Kinh doanh</span>
+                            <span class="tag">Hà Nội</span>
+                            <span class="tag">Ứng tuyển mở</span>
+                        </div>
+                        <h3 class="job-card__title">Nhân viên kinh doanh dịch vụ số</h3>
+                        <p class="job-card__desc">
+                            Tìm hiểu nhu cầu doanh nghiệp, xây dựng quan hệ và theo dõi hành trình từ tư vấn đến ký kết.
+                        </p>
+                        <div class="job-card__meta">
+                            <div>
+                                <p class="job-card__meta-label">Thu nhập</p>
+                                <p class="job-card__meta-value">Trao đổi</p>
+                            </div>
+                            <div>
+                                <p class="job-card__meta-label">Hình thức</p>
+                                <p class="job-card__meta-value">Trao đổi</p>
+                            </div>
+                            <div>
+                                <p class="job-card__meta-label">Địa điểm</p>
+                                <p class="job-card__meta-value">Cầu Giấy</p>
+                            </div>
+                        </div>
+                        <a class="btn btn--accent btn--pill" href="#jobs-apply">ĐĂNG KÝ NGAY</a>
+                    </article>
+
+                    <article class="job-card" data-open-application="true">
+                        <div class="job-card__tags">
+                            <span class="tag tag--muted">Open application</span>
+                        </div>
+                        <h3 class="job-card__title">Chưa có vị trí phù hợp?</h3>
+                        <p class="job-card__desc">
+                            Gửi hồ sơ tự do và mô tả loại công việc bạn muốn làm. HanoiWeb có thể liên hệ khi có nhu cầu
+                            phù
+                            hợp.
+                        </p>
+                        <div class="job-card__meta">
+                            <div>
+                                <p class="job-card__meta-label">Vai trò</p>
+                                <p class="job-card__meta-value">Tự đề xuất</p>
+                            </div>
+                            <div>
+                                <p class="job-card__meta-label">Hình thức</p>
+                                <p class="job-card__meta-value">Linh hoạt</p>
+                            </div>
+                            <div>
+                                <p class="job-card__meta-label">Phản hồi</p>
+                                <p class="job-card__meta-value">Khi có vị trí phù hợp</p>
+                            </div>
+                        </div>
+                        <a class="btn btn--outline-accent btn--pill" href="#jobs-apply">Gửi CV tự do</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="jobs-steps" data-reveal>
+            <div class="container">
+                <h2 class="jobs-steps__title">
+                    Bốn Bước, Mỗi Bước Đều Biết <span class="text-accent">Điều Gì Xảy Ra Tiếp Theo</span>
+                </h2>
+                <div class="jobs-steps__grid">
+                    <div class="jobs-step">
+                        <span class="jobs-step__num">01</span>
+                        <div>
+                            <p class="jobs-step__title">Gửi hồ sơ</p>
+                            <p class="jobs-step__desc">CV, portfolio hoặc link dự án cùng vài dòng về điều bạn muốn làm.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="jobs-step">
+                        <span class="jobs-step__num">02</span>
+                        <div>
+                            <p class="jobs-step__title">Trao đổi ngắn</p>
+                            <p class="jobs-step__desc">Xác nhận vai trò, kỳ vọng, lịch làm việc và những câu hỏi ban
+                                đầu.</p>
+                        </div>
+                    </div>
+                    <div class="jobs-step">
+                        <span class="jobs-step__num">03</span>
+                        <div>
+                            <p class="jobs-step__title">Phỏng vấn / bài thực hành</p>
+                            <p class="jobs-step__desc">Đánh giá cách tư duy và phối hợp; không dùng bài test quá dài để
+                                lấy sản phẩm miễn phí.</p>
+                        </div>
+                    </div>
+                    <div class="jobs-step">
+                        <span class="jobs-step__num">04</span>
+                        <div>
+                            <p class="jobs-step__title">Đề nghị &amp; hội nhập</p>
+                            <p class="jobs-step__desc">Thống nhất điều kiện, người hướng dẫn và mục tiêu trong giai đoạn
+                                đầu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="jobs-apply" id="jobs-apply" data-reveal>
+            <div class="container jobs-apply__inner">
+                <form class="jobs-apply__form">
+                    <h2 class="jobs-apply__form-title">Nộp Đơn Tuyển Dụng</h2>
+                    <p class="jobs-apply__form-desc">Chúng tôi sẽ phản hồi khi hồ sơ phù hợp với nhu cầu đang mở.</p>
+                    <label class="field">
+                        <span>Họ và tên</span>
+                        <input type="text" placeholder="*Nguyễn Văn A*" />
+                    </label>
+                    <label class="field">
+                        <span>Số điện thoại</span>
+                        <input type="tel" placeholder="*09xx xxx xxx*" />
+                    </label>
+                    <label class="field">
+                        <span>Vị trí quan tâm</span>
+                        <span class="select-wrap">
+                            <select>
+                                <option>SEO tổng thể</option>
+                                <option>Nhân viên văn phòng – Tư vấn khách hàng</option>
+                                <option>Lập trình viên WordPress</option>
+                                <option>Nhân viên kinh doanh dịch vụ số</option>
+                                <option>Ứng tuyển mở</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down select-wrap__icon"></i>
+                        </span>
+                    </label>
+                    <label class="field">
+                        <span>CV / Portfolio</span>
+                        <input type="file" />
+                    </label>
+                    <button type="submit" class="btn btn--outline-accent-on-teal btn--pill btn--block">
+                        Gửi hồ sơ
+                        <span class="btn__icon-circle btn__icon-circle--outline-white">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </span>
+                    </button>
+                </form>
+
+                <div class="jobs-apply__faq">
+                    <details class="faq-item">
+                        <summary>Hồ sơ ứng tuyển gồm những gì? <i class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Ứng viên nên gửi CV cập nhật và portfolio hoặc sản phẩm liên quan nếu vị trí yêu cầu. Có
+                                thể bổ sung thông tin về kinh nghiệm, công cụ sử dụng và thời gian có thể bắt đầu làm
+                                việc.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Bao lâu thì nhận được kết quả phỏng vấn? <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <div class="faq-item__content">
+                            <p>Thời gian phản hồi phụ thuộc từng vị trí và số lượng ứng viên. Bộ phận tuyển dụng sẽ liên
+                                hệ theo thông tin ứng viên cung cấp khi có kết quả hoặc cần thêm vòng trao đổi.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Quy trình tuyển dụng tại HanoiWeb gồm những bước nào? <i
+                                class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Thông thường gồm tiếp nhận hồ sơ, sàng lọc, trao đổi hoặc phỏng vấn chuyên môn và xác
+                                nhận kết quả. Một số vị trí có thể có bài test ngắn để đánh giá kỹ năng thực tế.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Chế độ lương thưởng tại Hanoiweb <i class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Mức lương, KPI, thưởng và phúc lợi được trao đổi theo vị trí, năng lực và hình thức làm
+                                việc. Các điều kiện cụ thể sẽ được thống nhất trước khi nhận việc.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Khi đi phỏng vấn cần mang theo những gì? <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <div class="faq-item__content">
+                            <p>Bạn nên chuẩn bị CV, portfolio hoặc thiết bị để trình bày sản phẩm nếu cần. Với phỏng vấn
+                                online, hãy kiểm tra đường truyền, camera và đường dẫn cuộc họp trước giờ hẹn.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script type="module" src="../../../assets/js/main.js"></script>
+</body>
+
+</html>

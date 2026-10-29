@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Câu Hỏi Thường Gặp - HanoiWeb</title>
+    <meta name="description"
+        content="Câu hỏi thường gặp tại HanoiWeb: giải đáp thắc mắc theo từng giai đoạn sử dụng dịch vụ, từ trước khi ký hợp đồng đến sau khi website vận hành." />
+    <link rel="icon" href="/assets/images/logo/logo-hanoiweb.png" />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="../../../assets/css/variables.css" />
+    <link rel="stylesheet" href="../../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../../assets/css/faq-page.css" />
+</head>
+
+<body>
+    <div id="site-header"></div>
+
+    <main>
+        <section class="faq-hero">
+            <div class="container faq-hero__inner">
+                <div class="faq-hero__content">
+                    <h1 class="faq-hero__title">
+                        <span class="text-primary">Tìm Câu Trả Lời Trước Khi</span>
+                        <span class="text-accent">Chờ Hỗ Trợ</span>
+                    </h1>
+                    <p class="faq-hero__desc">
+                        Các câu hỏi được sắp xếp theo đúng hành trình sử dụng dịch vụ: trước khi ký, trong khi triển
+                        khai, lúc
+                        bàn giao và sau khi website vận hành.
+                    </p>
+                    <div class="faq-hero__actions">
+                        <a class="btn btn--accent btn--pill" href="#faq-search">Tìm câu trả lời</a>
+                        <a class="btn btn--outline-primary btn--pill" href="../support/index.html">Gửi yêu cầu hỗ
+                            trợ</a>
+                    </div>
+                </div>
+                <div class="faq-hero__media">
+                    <img src="../../../assets/images/banner/news1.jpg" alt="Đội ngũ HanoiWeb" />
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-search" id="faq-search" data-reveal>
+            <div class="container">
+                <h2 class="faq-search__title">
+                    <span class="text-primary">Nhập Vấn Đề Của Bạn Hoặc</span>
+                    <span class="text-accent">Chọn Một Chủ Đề</span>
+                </h2>
+                <p class="faq-search__desc">
+                    Không tìm thấy câu trả lời phù hợp, hãy chuyển sang trang hỗ trợ và gửi đầy đủ URL, ảnh lỗi và thông
+                    tin
+                    liên quan.
+                </p>
+
+                <form class="faq-search__bar" id="faq-search-form">
+                    <input type="search" id="faq-search-input"
+                        placeholder="Ví dụ: bảo hành, gia hạn tên miền, thời gian thiết kế..." />
+                    <button type="submit">Gửi thông tin</button>
+                </form>
+
+                <nav class="faq-filter">
+                    <button type="button" class="faq-filter__tab is-active" data-filter="all">Tất cả</button>
+                    <button type="button" class="faq-filter__tab" data-filter="website">Website</button>
+                    <button type="button" class="faq-filter__tab" data-filter="seo">SEO</button>
+                    <button type="button" class="faq-filter__tab" data-filter="noi-dung">Nội dung</button>
+                    <button type="button" class="faq-filter__tab" data-filter="ten-mien-hosting">Tên miền &amp;
+                        Hosting</button>
+                    <button type="button" class="faq-filter__tab" data-filter="thanh-toan">Thanh toán</button>
+                    <button type="button" class="faq-filter__tab" data-filter="bao-hanh">Bảo hành</button>
+                    <button type="button" class="faq-filter__tab" data-filter="ho-tro">Hỗ trợ</button>
+                    <button type="button" class="faq-filter__tab" data-filter="bao-mat">Bảo mật</button>
+                </nav>
+            </div>
+        </section>
+
+        <section class="faq-body" data-reveal>
+            <div class="container faq-body__inner">
+                <aside class="faq-aside">
+                    <h2 class="faq-aside__title">Câu trả lời rõ ràng hơn hợp đồng mơ hồ</h2>
+                    <p class="faq-aside__desc">
+                        Nội dung FAQ giúp hiểu nhanh. Khi có khác biệt, báo giá và hợp đồng đã ký là căn cứ ưu tiên.
+                    </p>
+                    <div class="faq-aside__links">
+                        <a href="../dieu-kien-su-dung-dich-vu/index.html">Xem trung tâm chính sách</a>
+                        <a href="../dieu-kien-su-dung-dich-vu/index.html#nghiem-thu-ban-giao">Phạm vi bảo hành</a>
+                        <a href="../chinh-sach/chinh-sach-thanh-toan/index.html">Cách thanh toán</a>
+                        <a href="../support/index.html">Kênh hỗ trợ</a>
+                    </div>
+                </aside>
+
+                <div class="faq-list" id="faq-list">
+                    <details class="faq-item" data-category="website">
+                        <summary>Thiết kế website là gì? <i class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Thiết kế website là quá trình xây dựng giao diện, cấu trúc và chức năng của một trang web
+                                để phục vụ mục tiêu thương hiệu, cung cấp thông tin, bán hàng hoặc tạo chuyển đổi.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="website">
+                        <summary>Cần chuẩn bị những thông tin gì trước khi thiết kế website? <i
+                                class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Nên chuẩn bị logo, màu nhận diện, thông tin doanh nghiệp, sản phẩm hoặc dịch vụ, hình
+                                ảnh, thông tin liên hệ và các chức năng mong muốn. HanoiWeb có thể hỗ trợ sắp xếp lại
+                                nội dung trước khi triển khai.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="website">
+                        <summary>Thời gian hoàn thành website thường là bao lâu? <i
+                                class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Thời gian phụ thuộc số lượng trang, mức độ tùy chỉnh, chức năng và tốc độ cung cấp nội
+                                dung. Tiến độ cụ thể được xác nhận sau khi phạm vi dự án được chốt.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="bao-hanh">
+                        <summary>Website được bảo hành trong bao lâu? <i class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Thời gian bảo hành được quy định theo báo giá hoặc hợp đồng của từng dự án và tập trung
+                                vào lỗi thuộc phần triển khai đã bàn giao.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="bao-hanh">
+                        <summary>Bảo hành có bao gồm yêu cầu thêm tính năng mới không? <i
+                                class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Không mặc định. Tính năng mới hoặc thay đổi ngoài phạm vi ban đầu sẽ được đánh giá khối
+                                lượng và báo giá trước khi thực hiện.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="thanh-toan">
+                        <summary>Sau năm đầu tiên có chi phí duy trì nào? <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <div class="faq-item__content">
+                            <p>Có thể phát sinh các khoản định kỳ như tên miền, hosting, SSL, email, plugin hoặc dịch vụ
+                                chăm sóc tùy hệ thống đang sử dụng. HanoiWeb sẽ thông báo các khoản liên quan trước kỳ
+                                gia hạn.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="seo">
+                        <summary>SEO mất bao lâu để có kết quả? <i class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Thời gian SEO phụ thuộc hiện trạng website, cạnh tranh, nội dung và độ uy tín. Nên đánh
+                                giá theo giai đoạn bằng hiển thị, traffic và chuyển đổi thay vì kỳ vọng một mốc Top cố
+                                định.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="seo">
+                        <summary>HanoiWeb có cam kết từ khóa lên Top tuyệt đối không? <i
+                                class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Không nên cam kết thứ hạng tuyệt đối vì kết quả tìm kiếm do Google quyết định và thay đổi
+                                theo thuật toán, cạnh tranh và người dùng. HanoiWeb tập trung vào quy trình minh bạch và
+                                tăng trưởng có thể đo lường.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="thanh-toan">
+                        <summary>HanoiWeb chấp nhận hình thức thanh toán nào? <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <div class="faq-item__content">
+                            <p>Hình thức và tiến độ thanh toán được ghi trong báo giá hoặc hợp đồng. Thông tin tài khoản
+                                thanh toán chính thức sẽ được HanoiWeb xác nhận trước khi khách hàng chuyển khoản.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="thanh-toan">
+                        <summary>HanoiWeb có hợp đồng và hóa đơn không? <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <div class="faq-item__content">
+                            <p>Các dự án có thể được ký hợp đồng và thực hiện chứng từ theo thông tin pháp lý, phạm vi
+                                dịch vụ và thỏa thuận giữa hai bên.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="ho-tro">
+                        <summary>Tôi cần gửi gì khi website gặp lỗi? <i class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Hãy gửi URL, ảnh hoặc video lỗi, thiết bị hoặc trình duyệt đang dùng, thời điểm phát sinh
+                                và thao tác trước khi lỗi xảy ra để đội ngũ hỗ trợ kiểm tra nhanh hơn.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="ho-tro">
+                        <summary>Tôi có thể gửi yêu cầu hỗ trợ ngoài giờ làm việc không? <i
+                                class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Bạn vẫn có thể gửi yêu cầu qua các kênh liên hệ. Thời gian phản hồi và xử lý sẽ theo
+                                khung hỗ trợ hoặc mức độ ưu tiên đã thỏa thuận.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="noi-dung">
+                        <summary>HanoiWeb có hỗ trợ cập nhật nội dung ban đầu không? <i
+                                class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Có thể hỗ trợ nhập hoặc cập nhật nội dung ban đầu theo phạm vi dự án. Khối lượng lớn hoặc
+                                yêu cầu biên tập chuyên sâu có thể được tách thành hạng mục riêng.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" data-category="bao-mat">
+                        <summary>Dữ liệu trong form liên hệ được dùng như thế nào? <i
+                                class="fa-solid fa-chevron-down"></i></summary>
+                        <div class="faq-item__content">
+                            <p>Thông tin được dùng để tiếp nhận và phản hồi yêu cầu tư vấn hoặc hỗ trợ. Việc lưu trữ và
+                                xử lý dữ liệu thực hiện theo chính sách bảo mật được công bố trên website.</p>
+                        </div>
+                    </details>
+                </div>
+                <p class="faq-empty" id="faq-empty" hidden>Không tìm thấy câu hỏi phù hợp. Hãy gửi yêu cầu hỗ trợ để
+                    được giải đáp trực tiếp.</p>
+            </div>
+        </section>
+
+        <section class="faq-cta" data-reveal>
+            <div class="container faq-cta__inner">
+                <div>
+                    <h2 class="faq-cta__title">
+                        Gửi Đúng Thông Tin Để HanoiWeb Xử Lý <span class="text-accent">Nhanh Hơn</span>
+                    </h2>
+                    <p class="faq-cta__desc">
+                        Chuẩn bị URL, ảnh màn hình, thời điểm xảy ra và mô tả thao tác. Tránh gửi mật khẩu trong nội
+                        dung email
+                        không mã hóa.
+                    </p>
+                </div>
+                <a class="btn btn--outline-accent-on-teal btn--pill" href="../support/index.html#support-cta">
+                    <span class="btn__icon-circle btn__icon-circle--outline-white">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                    Gửi phiếu hỗ trợ
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script type="module" src="../../../assets/js/main.js"></script>
+</body>
+
+</html>

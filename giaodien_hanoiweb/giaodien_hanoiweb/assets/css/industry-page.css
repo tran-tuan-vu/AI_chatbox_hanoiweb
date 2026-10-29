@@ -1,0 +1,413 @@
+/* Shared template styles for all "Thiết kế Website {Ngành}" pages
+   (website-doanh-nghiep, website-bat-dong-san, website-giao-duc, website-ban-hang, website-spa, website-noi-that).
+   Only the hero + "Hành động trước đối thủ" section differ per page (content + --hero-image / --compete-image). */
+
+/* ---------- Hero ---------- */
+.corp-hero {
+  position: relative;
+  color: var(--color-white);
+  padding: var(--space-11) 0;
+  background:
+    linear-gradient(90deg, rgba(8, 14, 22, 0.8) 0%, rgba(8, 14, 22, 0.45) 55%, rgba(8, 14, 22, 0.15) 100%),
+    var(--hero-image, none) center / cover no-repeat,
+    var(--color-gray-900);
+}
+
+.corp-hero__inner {
+  max-width: 620px;
+}
+
+.corp-hero__title {
+  font-size: var(--text-h1-size);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: var(--space-5);
+  text-transform: uppercase;
+}
+
+.corp-hero__list {
+  margin-bottom: var(--space-6);
+}
+
+.corp-hero__list li {
+  position: relative;
+  padding-left: var(--space-5);
+  margin-bottom: var(--space-3);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.corp-hero__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+}
+
+/* Flags a section still waiting on a real photo (never fabricate the image itself) */
+.missing-image-note {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background: var(--color-white);
+  border: 1.5px dashed var(--color-teal-500);
+  color: var(--color-teal-700);
+  font-size: var(--text-caption-size);
+  font-weight: 600;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  z-index: 5;
+}
+
+/* ---------- Nền tảng công nghệ ---------- */
+.corp-tools {
+  background: var(--color-gray-50);
+  padding: var(--space-9) 0;
+}
+
+.corp-tools__title {
+  text-align: center;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: var(--space-6);
+}
+
+.corp-tools__grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.corp-tools__item {
+  width: 96px;
+  height: 72px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 20px rgba(18, 20, 28, 0.08);
+  padding: var(--space-3) var(--space-4);
+  transition: transform 0.2s ease;
+}
+
+.corp-tools__item img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.corp-tools__item:hover {
+  transform: translateY(-4px);
+}
+
+/* ---------- Hành động trước đối thủ ---------- */
+.corp-compete {
+  padding: var(--space-10) 0;
+  position: relative;
+}
+
+.corp-compete__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.corp-compete__title {
+  font-size: var(--text-h3-size);
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: var(--space-4);
+}
+
+.corp-compete__content p {
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-4);
+}
+
+.corp-compete__media {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.corp-compete__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark, full-bleed photo variant (bất động sản / bán hàng / nội thất) — no separate media card,
+   the section itself is the photo (same treatment as .corp-hero). */
+.corp-compete--dark {
+  color: var(--color-white);
+  background:
+    linear-gradient(90deg, rgba(8, 14, 22, 0.85) 0%, rgba(8, 14, 22, 0.55) 55%, rgba(8, 14, 22, 0.2) 100%),
+    var(--compete-image, none) center / cover no-repeat,
+    var(--color-gray-900);
+}
+
+.corp-compete--dark .corp-compete__inner {
+  grid-template-columns: 1fr;
+}
+
+.corp-compete--dark .corp-compete__content {
+  max-width: 620px;
+}
+
+.corp-compete--dark .corp-compete__content p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* ---------- Giới thiệu đa lĩnh vực ---------- */
+.corp-intro {
+  background: var(--color-white);
+  padding: var(--space-10) 0;
+}
+
+.corp-intro__title {
+  font-size: var(--text-h2-size);
+  font-weight: 700;
+  margin-bottom: var(--space-5);
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.corp-intro p {
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-4);
+  max-width: 1000px;
+}
+
+.corp-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Bảng đa lĩnh vực ---------- */
+.corp-table {
+  padding-bottom: var(--space-10);
+}
+
+.corp-table__row {
+  background: var(--color-gray-50);
+  position: relative;
+}
+
+.corp-table__row:nth-child(even) {
+  background: var(--color-orange-50);
+}
+
+.corp-table__row-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.corp-table__label,
+.corp-table__desc {
+  flex: 0 0 400px;
+  width: 400px;
+}
+
+.corp-table__media {
+  flex: 0 0 0px;
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 32px rgba(18, 20, 28, 0.18);
+  transform: translateY(24px);
+  z-index: 2;
+  transition:
+    flex-basis 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.corp-table__row:hover .corp-table__media {
+  flex: 0 0 400px;
+  width: 400px;
+  opacity: 1;
+  transform: translateY(-16px);
+}
+
+.corp-table__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
+}
+
+.corp-table__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-6);
+}
+
+.corp-table__label span:first-child {
+  color: var(--color-primary);
+}
+
+.corp-table__label strong {
+  color: var(--color-accent);
+  font-size: var(--text-h4-size);
+}
+
+.corp-table__desc {
+  padding: var(--space-6);
+  color: var(--color-gray-700);
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- Quy trình ---------- */
+.corp-process {
+  background: var(--color-gray-50);
+  padding: var(--space-10) 0;
+}
+
+.corp-process__title {
+  text-align: center;
+  color: var(--color-primary);
+  font-size: var(--text-h2-size);
+  font-weight: 700;
+  margin-bottom: var(--space-8);
+}
+
+.process-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.process-row--reverse {
+  flex-direction: row-reverse;
+}
+
+.process-row__num {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-teal-500);
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-size: var(--text-h4-size);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-row__card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  background: var(--color-teal-50);
+  border: 1.5px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+}
+
+.process-row--reverse .process-row__card {
+  flex-direction: row-reverse;
+}
+
+.process-row__icon {
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-row__icon--img {
+  flex-basis: 96px;
+  width: 96px;
+  height: 96px;
+  border-radius: 0;
+  background: transparent;
+}
+
+.process-row__icon--img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.process-row__title {
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.process-row__desc {
+  color: var(--color-gray-700);
+  font-size: var(--text-body-sm-size);
+}
+
+.corp-process__cta {
+  text-align: center;
+  margin-top: var(--space-6);
+}
+
+@media (max-width: 1100px) {
+  .corp-compete__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .corp-table__row-inner {
+    flex-direction: column;
+  }
+
+  .corp-table__label,
+  .corp-table__desc {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .corp-table__media,
+  .corp-table__row:hover .corp-table__media {
+    flex-basis: auto;
+    width: 100%;
+    opacity: 1;
+    overflow: hidden;
+    transform: none;
+    margin: 0 var(--space-6) var(--space-5);
+  }
+
+  .process-row,
+  .process-row--reverse {
+    flex-direction: column;
+  }
+
+  .process-row__card,
+  .process-row--reverse .process-row__card {
+    flex-direction: column;
+    text-align: center;
+  }
+}

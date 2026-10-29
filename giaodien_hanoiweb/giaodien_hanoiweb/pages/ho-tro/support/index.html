@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Hỗ Trợ Khách Hàng - HanoiWeb</title>
+    <meta name="description"
+        content="Hỗ trợ khách hàng HanoiWeb: chọn loại yêu cầu, gửi phiếu hỗ trợ đầy đủ thông tin hoặc gọi hotline khi website gặp sự cố cần xử lý ngay." />
+    <link rel="icon" href="/assets/images/logo/logo-hanoiweb.png" />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="../../../assets/css/variables.css" />
+    <link rel="stylesheet" href="../../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../../assets/css/support.css" />
+</head>
+
+<body>
+    <div id="site-header"></div>
+
+    <main>
+        <section class="support-hero">
+            <div class="container support-hero__inner">
+                <div class="support-hero__content">
+                    <h1 class="support-hero__title">
+                        <span class="text-primary">Mô Tả Đúng Vấn Đề Để</span>
+                        <span class="text-accent">Kỹ Thuật Xử Lý Đúng</span>
+                        <span class="text-primary">Ngay Từ Đầu</span>
+                    </h1>
+                    <p class="support-hero__desc">
+                        Chọn loại yêu cầu, xem thông tin cần chuẩn bị và gửi một phiếu hỗ trợ có đủ dữ liệu. Bạn vẫn có
+                        thể gọi
+                        hotline khi website ngừng hoạt động hoặc ảnh hưởng trực tiếp đến khách hàng.
+                    </p>
+                    <div class="support-hero__actions">
+                        <a class="btn btn--accent btn--pill" href="#support-selector">Chọn loại sự cố</a>
+                        <a class="btn btn--outline-primary btn--pill" href="tel:0376175030">Gọi 0376 175 030</a>
+                    </div>
+                </div>
+                <div class="support-hero__media">
+                    <img src="../../../assets/images/banner/news1.jpg" alt="Đội ngũ HanoiWeb" />
+                </div>
+            </div>
+        </section>
+
+        <section class="support-selector" id="support-selector" data-reveal>
+            <div class="container">
+                <h2 class="support-selector__title">
+                    Bạn Đang Cần <span class="text-accent">Hỗ Trợ Việc Gì?</span>
+                </h2>
+
+                <div class="support-selector__inner">
+                    <div class="support-tabs">
+                        <button type="button" class="support-tab is-active" data-target="website-loi">Website không truy
+                            cập được</button>
+                        <button type="button" class="support-tab" data-target="cap-nhat-noi-dung">Cập nhật nội
+                            dung</button>
+                        <button type="button" class="support-tab" data-target="ten-mien-hosting">Tên miền /
+                            Hosting</button>
+                        <button type="button" class="support-tab" data-target="email-doanh-nghiep">Email doanh
+                            nghiệp</button>
+                        <button type="button" class="support-tab" data-target="seo-quang-cao">SEO / Quảng cáo</button>
+                    </div>
+
+                    <div class="support-panels">
+                        <article class="support-panel" data-panel="website-loi">
+                            <p class="support-panel__eyebrow">Mức độ cần xác minh</p>
+                            <h3 class="support-panel__title">Website lỗi hoặc không truy cập được</h3>
+                            <p class="support-panel__lead">
+                                Kiểm tra nhanh bằng một mạng khác và chụp đúng thông báo lỗi trước khi gửi.
+                            </p>
+                            <div class="support-panel__steps">
+                                <div class="support-step"><span class="support-step__num">1</span> Gửi tên miền và thời
+                                    điểm bắt đầu xảy ra.</div>
+                                <div class="support-step"><span class="support-step__num">2</span> Cho biết lỗi xảy ra
+                                    với mọi thiết bị hay chỉ một máy.</div>
+                                <div class="support-step"><span class="support-step__num">3</span> Đính kèm ảnh màn
+                                    hình, mã lỗi hoặc video ngắn.</div>
+                                <div class="support-step"><span class="support-step__num">4</span> Nếu thay đổi gần
+                                    nhất: cập nhật plugin, DNS, mật khẩu hoặc nội dung.</div>
+                            </div>
+                            <a class="btn btn--accent btn--pill" href="#support-cta">Tạo phiếu khẩn cấp</a>
+                        </article>
+
+                        <article class="support-panel" data-panel="cap-nhat-noi-dung" hidden>
+                            <p class="support-panel__eyebrow">Mức độ cần xác minh</p>
+                            <h3 class="support-panel__title">Cập nhật nội dung</h3>
+                            <p class="support-panel__fallback">
+                                Nội dung hướng dẫn cho mục này đang được cập nhật. Vui lòng gọi hotline
+                                <strong>0376 175 030</strong> hoặc gửi phiếu hỗ trợ để được tư vấn trực tiếp.
+                            </p>
+                            <a class="btn btn--accent btn--pill" href="#support-cta">Gửi phiếu hỗ trợ</a>
+                        </article>
+
+                        <article class="support-panel" data-panel="ten-mien-hosting" hidden>
+                            <p class="support-panel__eyebrow">Mức độ cần xác minh</p>
+                            <h3 class="support-panel__title">Tên miền / Hosting</h3>
+                            <p class="support-panel__fallback">
+                                Nội dung hướng dẫn cho mục này đang được cập nhật. Vui lòng gọi hotline
+                                <strong>0376 175 030</strong> hoặc gửi phiếu hỗ trợ để được tư vấn trực tiếp.
+                            </p>
+                            <a class="btn btn--accent btn--pill" href="#support-cta">Gửi phiếu hỗ trợ</a>
+                        </article>
+
+                        <article class="support-panel" data-panel="email-doanh-nghiep" hidden>
+                            <p class="support-panel__eyebrow">Mức độ cần xác minh</p>
+                            <h3 class="support-panel__title">Email doanh nghiệp</h3>
+                            <p class="support-panel__fallback">
+                                Nội dung hướng dẫn cho mục này đang được cập nhật. Vui lòng gọi hotline
+                                <strong>0376 175 030</strong> hoặc gửi phiếu hỗ trợ để được tư vấn trực tiếp.
+                            </p>
+                            <a class="btn btn--accent btn--pill" href="#support-cta">Gửi phiếu hỗ trợ</a>
+                        </article>
+
+                        <article class="support-panel" data-panel="seo-quang-cao" hidden>
+                            <p class="support-panel__eyebrow">Mức độ cần xác minh</p>
+                            <h3 class="support-panel__title">SEO / Quảng cáo</h3>
+                            <p class="support-panel__fallback">
+                                Nội dung hướng dẫn cho mục này đang được cập nhật. Vui lòng gọi hotline
+                                <strong>0376 175 030</strong> hoặc gửi phiếu hỗ trợ để được tư vấn trực tiếp.
+                            </p>
+                            <a class="btn btn--accent btn--pill" href="#support-cta">Gửi phiếu hỗ trợ</a>
+                        </article>
+                    </div>
+                </div>
+
+                <h2 class="support-channels__title">
+                    Chọn Kênh Phù Hợp Với Mức Độ <span class="text-accent">Khẩn Cấp</span>
+                </h2>
+                <div class="support-channels__grid">
+                    <article class="support-channel">
+                        <h3 class="support-channel__title">Hotline</h3>
+                        <p class="support-channel__desc">Phù hợp khi website ngừng hoạt động hoặc ảnh hưởng trực tiếp
+                            đến khách hàng.</p>
+                        <a class="btn btn--outline-accent btn--pill" href="tel:0376175030">
+                            <span class="btn__icon-circle btn__icon-circle--outline"><i
+                                    class="fa-solid fa-chevron-right"></i></span>
+                            0376 175 030
+                        </a>
+                    </article>
+                    <article class="support-channel">
+                        <h3 class="support-channel__title">Email</h3>
+                        <p class="support-channel__desc">Phù hợp với yêu cầu có tài liệu, ảnh chụp và nội dung cần lưu
+                            lại.</p>
+                        <a class="btn btn--outline-accent btn--pill" href="mailto:hanoiweb.com.vn@gmail.com">
+                            <span class="btn__icon-circle btn__icon-circle--outline"><i
+                                    class="fa-solid fa-chevron-right"></i></span>
+                            hanoiweb.com.vn@gmail.com
+                        </a>
+                    </article>
+                    <article class="support-channel">
+                        <h3 class="support-channel__title">Ticket</h3>
+                        <p class="support-channel__desc">Giúp phân loại, theo dõi trạng thái và tránh thất lạc yêu cầu.
+                        </p>
+                        <a class="btn btn--outline-accent btn--pill" href="#support-cta">
+                            <span class="btn__icon-circle btn__icon-circle--outline"><i
+                                    class="fa-solid fa-chevron-right"></i></span>
+                            Mở phiếu hỗ trợ
+                        </a>
+                    </article>
+                    <article class="support-channel">
+                        <h3 class="support-channel__title">Văn phòng</h3>
+                        <p class="support-channel__desc">Nhà số 9, Ngách 84, Ngõ 1 Phạm Tuấn Tài, Cầu Giấy, Hà Nội.</p>
+                        <a class="btn btn--outline-accent btn--pill" href="../../lien-he/index.html">
+                            <span class="btn__icon-circle btn__icon-circle--outline"><i
+                                    class="fa-solid fa-chevron-right"></i></span>
+                            Xem thông tin
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners" data-reveal>
+            <div class="container">
+                <h2 class="partners__title">Khách Hàng Tiêu Biểu</h2>
+            </div>
+            <div class="partners__viewport">
+                <div class="partners__track">
+                    <div class="partners__set" aria-hidden="false">
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-ae.png" alt="Alfa Enten" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-aquaone.png" alt="AquaOne" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-bhl.png"
+                            alt="Big Housing Land" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-dv.png"
+                            alt="Diverse VietNam" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-hoabinh.png" alt="Hòa Bình" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-hrb.png" alt="Henry Brow" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-keyen.png" alt="Keyen" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-puma.png" alt="Puma" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-wh.png" alt="WeldHome" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-xds9.png"
+                            alt="Xây Dựng Số 9" />
+                    </div>
+                    <div class="partners__set" aria-hidden="true">
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-ae.png" alt="" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-aquaone.png" alt="" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-bhl.png" alt="" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-dv.png" alt="" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-hoabinh.png" alt="" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-hrb.png" alt="" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-keyen.png" alt="" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-puma.png" alt="" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-wh.png" alt="" />
+                        <img class="partners__logo" src="../../../assets/images/logo/logo-xds9.png" alt="" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="support-cta" id="support-cta" data-reveal>
+            <div class="container support-cta__inner">
+                <form class="support-cta__form">
+                    <h2 class="support-cta__form-title">Xây Dựng Website Chuyên Nghiệp - Chuẩn SEO</h2>
+                    <div class="support-cta__row">
+                        <label class="field">
+                            <span>Họ và tên</span>
+                            <input type="text" placeholder="*Nguyễn Văn A*" />
+                        </label>
+                        <label class="field">
+                            <span>Số điện thoại</span>
+                            <input type="tel" placeholder="*09xx xxx xxx*" />
+                        </label>
+                    </div>
+                    <div class="support-cta__row">
+                        <label class="field">
+                            <span>Email</span>
+                            <input type="email" placeholder="Example@gmail.com" />
+                        </label>
+                        <label class="field">
+                            <span>Loại yêu cầu</span>
+                            <span class="select-wrap">
+                                <select>
+                                    <option>Chọn yêu cầu</option>
+                                    <option>Website không truy cập được</option>
+                                    <option>Cập nhật nội dung</option>
+                                    <option>Tên miền / Hosting</option>
+                                    <option>Email doanh nghiệp</option>
+                                    <option>SEO / Quảng cáo</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-wrap__icon"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <label class="field">
+                        <span>Url Website</span>
+                        <input type="text" placeholder="Link Website (Nếu có)" />
+                    </label>
+                    <label class="field">
+                        <span>Mô tả vấn đề</span>
+                        <textarea rows="3" placeholder="Thời điểm, thao tác, mã lỗi và mức độ ảnh hưởng..."></textarea>
+                    </label>
+                    <label class="field">
+                        <span>Ảnh hoặc tài liệu liên quan</span>
+                        <input type="file" />
+                    </label>
+                    <button type="submit" class="btn btn--outline-accent-on-teal btn--pill btn--block">
+                        Tư vấn báo giá
+                        <span class="btn__icon-circle btn__icon-circle--outline-white">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </span>
+                    </button>
+                </form>
+
+                <div class="support-cta__content">
+                    <h2 class="support-cta__title">
+                        <span class="text-primary">Gửi Một Yêu Cầu Có Thể</span><br />
+                        <span class="text-accent">Bắt Đầu Xử Lý Ngay</span>
+                    </h2>
+                    <div class="support-cta__callout">
+                        <strong>Không gửi thông tin bí mật</strong>
+                        <p>
+                            Mật khẩu, OTP, khóa API và dữ liệu khách hàng cần được chia sẻ qua kênh bảo mật riêng sau
+                            khi
+                            HanoiWeb xác minh yêu cầu.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script type="module" src="../../../assets/js/main.js"></script>
+</body>
+
+</html>

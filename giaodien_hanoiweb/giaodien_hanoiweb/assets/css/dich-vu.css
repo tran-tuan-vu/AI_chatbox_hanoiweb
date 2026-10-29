@@ -1,0 +1,202 @@
+/* ---------- Hero Dịch vụ ---------- */
+.services-hero {
+  background: #d2f6f8;
+  padding: var(--space-10) 0 0;
+}
+
+.services-hero__inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+.services-hero__title {
+  font-size: var(--text-h1-size);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-gray-900);
+}
+
+.services-hero__media {
+  aspect-ratio: 4 / 3;
+}
+
+.services-hero__showcase {
+  display: grid;
+  grid-template-columns: minmax(280px, 500px) 1fr;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-8) 0;
+}
+
+.services-hero__laptop {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.services-hero__laptop .hero-slider__viewport,
+.services-hero__laptop .hero-slider__track,
+.services-hero__laptop .hero-slider__slide {
+  height: 100%;
+}
+
+.services-hero__laptop .hero-slider__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.services-hero__tagline {
+  font-size: var(--text-h2-size);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ---------- Lưới dịch vụ ---------- */
+.services-grid-section {
+  padding: var(--space-10) 0;
+}
+
+.services-grid-section__title {
+  text-align: center;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-8);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.service-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  padding: var(--space-6) var(--space-5);
+  background: var(--tile-color);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.service-tile__media {
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  margin-bottom: var(--space-5);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  transition: transform 0.35s ease, margin 0.35s ease;
+}
+
+.service-tile__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-tile__title {
+  font-size: var(--text-h4-size);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+}
+
+.service-tile__desc {
+  font-size: var(--text-body-sm-size);
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--space-4);
+}
+
+.service-tile__list li {
+  position: relative;
+  padding-left: var(--space-5);
+  font-size: var(--text-body-sm-size);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-2);
+  text-align: left;
+}
+
+.service-tile__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+}
+
+.service-tile__btn {
+  display: none;
+}
+
+.service-tile:hover .service-tile__media {
+  transform: scale(0.8);
+  margin-bottom: 0;
+}
+
+.service-tile:hover .service-tile__list {
+  display: none;
+}
+
+.service-tile:hover .service-tile__btn {
+  display: inline-flex;
+}
+
+.service-tile--navy {
+  --tile-color: #1b3a6b;
+}
+
+.service-tile--blue {
+  --tile-color: #1d6e8c;
+}
+
+.service-tile--teal {
+  --tile-color: #0d5a63;
+}
+
+.service-tile--green {
+  --tile-color: #16794f;
+}
+
+.service-tile--purple {
+  --tile-color: #5a3a9c;
+}
+
+.service-tile--red {
+  --tile-color: #9e1f3e;
+}
+
+@media (max-width: 1100px) {
+
+  .services-hero__inner,
+  .services-hero__showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

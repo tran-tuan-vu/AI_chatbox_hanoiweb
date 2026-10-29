@@ -1,0 +1,922 @@
+/* ========================================================================== 
+   Dịch vụ chạy quảng cáo Zalo - HanoiWeb
+   Giữ cùng design token, component và cách đặt class của source hiện tại.
+   ========================================================================== */
+
+.zalo-ads-page {
+    background: var(--color-white);
+    color: var(--color-gray-900);
+}
+
+/* ---------- Hero ---------- */
+.zalo-ads-hero {
+    background: var(--color-white);
+    padding: 58px 0 48px;
+}
+
+.zalo-ads-hero__inner {
+    display: grid;
+    grid-template-columns: 1.03fr 1fr;
+    gap: 68px;
+    align-items: center;
+}
+
+.zalo-ads-hero__title {
+    max-width: 610px;
+    color: var(--color-primary);
+    font-size: 48px;
+    line-height: 1.18;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.zalo-ads-hero__desc {
+    max-width: 610px;
+    color: var(--color-gray-700);
+    font-size: 17px;
+    line-height: 1.48;
+    margin-bottom: 24px;
+}
+
+.zalo-ads-hero__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.zalo-ads-hero__actions .btn {
+    min-height: 48px;
+    padding: 12px 20px;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.zalo-ads-hero__actions .btn--outline-accent {
+    background: var(--color-white);
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+}
+
+.zalo-ads-hero__media {
+    border: 1px solid var(--color-gray-300);
+    border-radius: 28px;
+    overflow: hidden;
+    background: var(--color-gray-50);
+}
+
+.zalo-ads-hero__media img {
+    width: 100%;
+    aspect-ratio: 1.38 / 1;
+    object-fit: cover;
+    object-position: center 70%;
+    display: block;
+}
+
+/* ---------- Zalo Ads hiệu quả ---------- */
+.zalo-ads-intro {
+    background: var(--color-white);
+    padding: 28px 0 52px;
+}
+
+.zalo-ads-intro__title {
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.zalo-ads-intro__inner {
+    display: grid;
+    grid-template-columns: 1.12fr 1fr;
+    gap: 62px;
+    align-items: center;
+}
+
+.zalo-ads-intro__media {
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.zalo-ads-intro__media img {
+    width: 100%;
+    aspect-ratio: 1.58 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.zalo-ads-intro__lead {
+    color: var(--color-gray-700);
+    font-size: 18px;
+    line-height: 1.45;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.zalo-ads-intro__point {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 10px;
+    align-items: start;
+    padding: 12px 0;
+    border-top: 1px solid #7d8795;
+}
+
+.zalo-ads-intro__point>span {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.zalo-ads-intro__point h3 {
+    color: var(--color-gray-700);
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.zalo-ads-intro__point p {
+    color: var(--color-gray-700);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* ---------- Vấn đề ---------- */
+.zalo-ads-problem {
+    background: #f3f4f6;
+    padding: 38px 0 54px;
+}
+
+.zalo-ads-problem__head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 74px;
+    align-items: start;
+    margin-bottom: 42px;
+}
+
+.zalo-ads-problem__head h2 {
+    color: var(--color-primary);
+    font-size: 38px;
+    line-height: 1.18;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.zalo-ads-problem__head p {
+    color: var(--color-gray-700);
+    font-size: 18px;
+    line-height: 1.4;
+    padding-top: 16px;
+}
+
+.zalo-ads-problem__card {
+    display: grid;
+    grid-template-columns: .95fr 1.1fr;
+    background: var(--color-white);
+    border: 1px solid #7f8997;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 5px rgba(18, 20, 28, .2);
+}
+
+.zalo-ads-problem__list {
+    padding: 62px 22px;
+    border-right: 1px solid #7f8997;
+}
+
+.zalo-ads-problem__item {
+    min-height: 56px;
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    align-items: center;
+    gap: 18px;
+    padding: 0 16px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    color: var(--color-gray-700);
+}
+
+.zalo-ads-problem__item:last-child {
+    margin-bottom: 0;
+}
+
+.zalo-ads-problem__item strong {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.zalo-ads-problem__num {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.zalo-ads-problem__item.is-active {
+    background: #2097a1;
+    color: var(--color-white);
+}
+
+.zalo-ads-problem__item.is-active .zalo-ads-problem__num {
+    color: #70dce3;
+}
+
+.zalo-ads-problem__detail {
+    padding: 26px 42px 28px 48px;
+}
+
+.zalo-ads-problem__detail h3 {
+    color: var(--color-teal-700);
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 26px;
+}
+
+.zalo-ads-problem__detail>p {
+    color: var(--color-gray-700);
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.zalo-ads-problem__detail ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.zalo-ads-problem__detail li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: var(--color-gray-900);
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.zalo-ads-problem__detail li i {
+    margin-top: 4px;
+}
+
+/* ---------- Mục tiêu quảng cáo ---------- */
+.zalo-ads-goals {
+    background: var(--color-white);
+    padding: 34px 0 52px;
+}
+
+.zalo-ads-goals__title {
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+}
+
+.zalo-ads-goals__grid {
+    display: grid;
+    grid-template-columns: 1.15fr .9fr;
+    gap: 22px;
+}
+
+.zalo-ads-goals__panel {
+    min-height: 360px;
+    border-radius: 24px;
+    background: #d5f5f6;
+    padding: 48px 26px 34px;
+}
+
+.zalo-ads-goals__eyebrow {
+    color: var(--color-accent);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+.zalo-ads-goals__panel h3 {
+    color: var(--color-primary);
+    font-size: 29px;
+    line-height: 1.2;
+    font-weight: 700;
+    max-width: 620px;
+    margin-bottom: 22px;
+}
+
+.zalo-ads-goals__lead {
+    color: var(--color-gray-900);
+    font-size: 18px;
+    line-height: 1.42;
+    font-weight: 600;
+    max-width: 620px;
+    margin-bottom: 18px;
+}
+
+.zalo-ads-goals__panel ul {
+    margin: 0;
+    padding-left: 24px;
+    color: var(--color-gray-900);
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.zalo-ads-goals__tabs {
+    display: grid;
+    align-content: stretch;
+    gap: 26px;
+}
+
+.zalo-ads-goals__tabs button {
+    min-height: 78px;
+    padding: 0 18px;
+    border: 2px solid var(--color-primary);
+    border-radius: 14px;
+    background: var(--color-white);
+    color: var(--color-gray-900);
+    text-align: left;
+    font: inherit;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.zalo-ads-goals__tabs button.is-active {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* ---------- Công việc ---------- */
+.zalo-ads-work {
+    background: #f3f4f6;
+    padding: 36px 0 52px;
+    scroll-margin-top: calc(var(--header-height, 0px) + 20px);
+}
+
+.zalo-ads-work__title {
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.zalo-ads-work__grid {
+    display: grid;
+    grid-template-columns: .82fr 1.12fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.zalo-ads-work__tabs {
+    display: grid;
+    gap: 26px;
+}
+
+.zalo-ads-work__tabs button {
+    min-height: 78px;
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+    background: var(--color-white);
+    color: var(--color-gray-900);
+    box-shadow: 0 3px 4px rgba(18, 20, 28, .15);
+    padding: 0 18px;
+    text-align: left;
+    font: inherit;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.zalo-ads-work__tabs button.is-active {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.zalo-ads-work__panel {
+    min-height: 418px;
+    display: grid;
+    grid-template-columns: 1.08fr .72fr;
+    gap: 24px;
+    align-items: center;
+    border: 1px solid #788494;
+    border-radius: 18px;
+    background: var(--color-white);
+    padding: 26px 20px 26px 26px;
+}
+
+.zalo-ads-work__eyebrow {
+    color: var(--color-accent);
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.zalo-ads-work__copy h3 {
+    color: var(--color-primary);
+    font-size: 27px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.zalo-ads-work__lead {
+    color: var(--color-gray-900);
+    font-size: 19px;
+    line-height: 1.35;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.zalo-ads-work__copy ul {
+    color: var(--color-gray-900);
+    font-size: 16px;
+    line-height: 1.55;
+    padding-left: 22px;
+    margin: 0;
+}
+
+.zalo-ads-work__media {
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.zalo-ads-work__media img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------- Dự án ---------- */
+.zalo-ads-projects {
+    padding: 42px 0 54px;
+}
+
+.zalo-ads-section-head {
+    margin-bottom: 26px;
+}
+
+.zalo-ads-projects .project-card {
+    border: 1px solid var(--color-gray-300);
+    box-shadow: none;
+    padding: 0 0 20px;
+    overflow: hidden;
+}
+
+.zalo-ads-projects .ph-project {
+    border-radius: 0;
+}
+
+.zalo-ads-projects .project-card .h4 {
+    font-size: 18px;
+    line-height: 1.3;
+    padding: 0 20px;
+    min-height: 48px;
+}
+
+.zalo-ads-projects .project-card .link-cta {
+    margin-left: 20px;
+}
+
+/* ---------- So sánh giá ---------- */
+.zalo-ads-pricing {
+    background: #f3f4f6;
+    padding: 38px 0 48px;
+}
+
+.zalo-ads-pricing__head {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.zalo-ads-pricing__head h2 {
+    color: var(--color-primary);
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.zalo-ads-pricing__head p {
+    color: var(--color-gray-500);
+    font-size: 15px;
+}
+
+.zalo-ads-pricing__table-wrap {
+    border: 1px solid #7a8493;
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--color-white);
+    box-shadow: 0 3px 5px rgba(18, 20, 28, .2);
+}
+
+.zalo-ads-pricing__table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 16px;
+}
+
+.zalo-ads-pricing__table th,
+.zalo-ads-pricing__table td {
+    border-right: 1px solid #8c96a3;
+    border-bottom: 1px solid #d5dae1;
+    padding: 13px 16px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.zalo-ads-pricing__table tr:last-child th,
+.zalo-ads-pricing__table tr:last-child td {
+    border-bottom: 0;
+}
+
+.zalo-ads-pricing__table th:last-child,
+.zalo-ads-pricing__table td:last-child {
+    border-right: 0;
+}
+
+.zalo-ads-pricing__table thead th {
+    color: var(--color-gray-900);
+    background: var(--color-white);
+    text-align: center;
+    font-weight: 400;
+}
+
+.zalo-ads-pricing__table thead th:first-child {
+    color: var(--color-teal-900);
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.zalo-ads-pricing__table thead span,
+.zalo-ads-pricing__table thead strong {
+    display: block;
+}
+
+.zalo-ads-pricing__table thead strong {
+    margin-top: 8px;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.zalo-ads-pricing__table tbody th {
+    color: var(--color-gray-900);
+    background: var(--color-white);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.zalo-ads-pricing__table .is-featured {
+    background: #0b4d50;
+    color: var(--color-white);
+}
+
+.zalo-ads-pricing__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.zalo-ads-pricing__cta .btn {
+    min-height: 44px;
+    padding: 9px 18px;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    background: transparent;
+    gap: 8px;
+}
+
+/* ---------- Partners ---------- */
+.zalo-ads-partners {
+    min-height: 210px;
+    padding: 24px 0 18px;
+    background: linear-gradient(90deg, #08484d 0%, #168d95 60%, #15919b 100%);
+}
+
+.zalo-ads-partners .partners__title {
+    font-size: 30px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.zalo-ads-partners .partners__logo {
+    height: 76px;
+    max-width: 260px;
+    padding: 0 42px;
+}
+
+/* ---------- Blog ---------- */
+.zalo-ads-blog {
+    padding: 36px 0 48px;
+}
+
+.zalo-ads-blog__title {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.zalo-ads-blog .blog__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.zalo-ads-blog .blog-card {
+    min-height: 450px;
+    border-radius: 18px;
+}
+
+.zalo-ads-blog .blog-card .h4 {
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 500;
+    min-height: 110px;
+}
+
+.zalo-ads-blog .ph-blog {
+    aspect-ratio: 1.35 / 1;
+}
+
+.zalo-ads-blog__pagination {
+    margin-top: 14px;
+}
+
+/* ---------- Form + FAQ ---------- */
+.zalo-ads-contact {
+    background: #f3f4f6;
+    padding: 42px 0 52px;
+    scroll-margin-top: calc(var(--header-height, 0px) + 20px);
+}
+
+.zalo-ads-contact__inner {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+    gap: 18px;
+}
+
+.zalo-ads-contact__form {
+    background: #329ba4;
+    border-radius: 28px;
+    padding: 24px 20px 20px;
+}
+
+.zalo-ads-contact__form h2 {
+    color: var(--color-white);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.18;
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.zalo-ads-contact__form .field {
+    margin-bottom: 18px;
+}
+
+.zalo-ads-contact__form .field>span:first-child {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 8px;
+}
+
+.zalo-ads-contact__form .field input,
+.zalo-ads-contact__form .field select {
+    min-height: 50px;
+    border-radius: 6px;
+}
+
+.zalo-ads-contact__submit {
+    width: 100%;
+    min-height: 112px;
+    border: 2px solid var(--color-accent);
+    border-radius: 22px;
+    background: transparent;
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.zalo-ads-contact__submit-icon {
+    font-size: 26px;
+}
+
+.zalo-ads-contact__faq .faq-item {
+    background: transparent;
+    margin-bottom: 15px;
+    padding: 12px 18px;
+}
+
+.zalo-ads-contact__faq .faq-item summary {
+    font-weight: 400;
+}
+
+.zalo-ads-contact__faq .faq-item summary i {
+    width: 20px;
+    height: 20px;
+    font-size: 9px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+
+    .zalo-ads-hero__inner,
+    .zalo-ads-intro__inner,
+    .zalo-ads-problem__head,
+    .zalo-ads-contact__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .zalo-ads-hero__media {
+        max-width: 760px;
+    }
+
+    .zalo-ads-problem__head {
+        gap: 18px;
+    }
+
+    .zalo-ads-problem__card {
+        grid-template-columns: 1fr;
+    }
+
+    .zalo-ads-problem__list {
+        border-right: 0;
+        border-bottom: 1px solid #7f8997;
+        padding: 30px 22px;
+    }
+
+    .zalo-ads-goals__grid,
+    .zalo-ads-work__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .zalo-ads-goals__tabs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .zalo-ads-work__tabs {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .zalo-ads-pricing__table-wrap {
+        overflow-x: auto;
+    }
+
+    .zalo-ads-pricing__table {
+        min-width: 940px;
+    }
+
+    .zalo-ads-blog .blog__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .zalo-ads-hero {
+        padding-top: 34px;
+    }
+
+    .zalo-ads-hero__title {
+        font-size: 34px;
+    }
+
+    .zalo-ads-hero__inner {
+        gap: 32px;
+    }
+
+    .zalo-ads-intro__title,
+    .zalo-ads-problem__head h2,
+    .zalo-ads-goals__title,
+    .zalo-ads-work__title,
+    .zalo-ads-pricing__head h2,
+    .zalo-ads-blog__title {
+        font-size: 28px;
+    }
+
+    .zalo-ads-problem__detail {
+        padding: 24px 20px;
+    }
+
+    .zalo-ads-problem__detail h3 {
+        font-size: 24px;
+    }
+
+    .zalo-ads-problem__detail>p {
+        font-size: 16px;
+    }
+
+    .zalo-ads-goals__panel {
+        padding: 30px 20px;
+    }
+
+    .zalo-ads-goals__panel h3 {
+        font-size: 25px;
+    }
+
+    .zalo-ads-goals__lead {
+        font-size: 16px;
+    }
+
+    .zalo-ads-goals__tabs {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .zalo-ads-goals__tabs button {
+        min-height: 62px;
+        font-size: 19px;
+    }
+
+    .zalo-ads-work__tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .zalo-ads-work__tabs button {
+        min-height: 62px;
+        font-size: 18px;
+    }
+
+    .zalo-ads-work__panel {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .zalo-ads-work__media {
+        max-width: 320px;
+    }
+
+    .zalo-ads-blog .blog__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .zalo-ads-partners .partners__logo {
+        height: 56px;
+        padding: 0 24px;
+    }
+}
+
+
+.zalo-ads-intro__media img,
+.zalo-ads-work__media img {
+    object-position: center;
+}
+
+.zalo-ads-pricing__table {
+    font-size: 15px;
+}
+
+.zalo-ads-pricing__table th,
+.zalo-ads-pricing__table td {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.zalo-ads-pricing__table thead strong {
+    font-size: 18px;
+}
+
+@media (max-width: 1100px) {
+    .zalo-ads-pricing__table {
+        min-width: 1120px;
+    }
+}
+
+
+.zalo-ads-intro__media img {
+    object-position: center center;
+}
+
+.zalo-ads-work__media img {
+    object-position: 64% center;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết Lead - Hanoiweb</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 24px;
+            color: #222;
+        }
+
+        a.back {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 12px 16px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card .label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .card .value {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 4px;
+            word-break: break-word;
+        }
+
+        .panel {
+            background: #fff;
+            padding: 16px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .panel .label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .msg {
+            margin-bottom: 12px;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .msg.customer {
+            background: #eef5ff;
+        }
+
+        .msg.bot {
+            background: #f5f5f5;
+        }
+
+        .msg .role {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <a class="back" href="{{ url_for('dashboard') }}">&larr; Quay lại danh sách</a>
+
+    <h1>Session {{ visitor.session_id[:8] }}</h1>
+
+    <div class="grid">
+        <div class="card">
+            <div class="label">Lead Score</div>
+            <div class="value">{{ visitor.lead_score }}</div>
+        </div>
+        <div class="card">
+            <div class="label">Trạng thái</div>
+            <div class="value">{{ visitor.lead_status }}</div>
+        </div>
+        <div class="card">
+            <div class="label">Dịch vụ quan tâm</div>
+            <div class="value">{{ visitor.service_interest or "-" }}</div>
+        </div>
+        <div class="card">
+            <div class="label">Ý định mua</div>
+            <div class="value">{{ visitor.purchase_intent }}</div>
+        </div>
+        <div class="card">
+            <div class="label">Số lần ghé</div>
+            <div class="value">{{ visitor.visit_count }}</div>
+        </div>
+        <div class="card">
+            <div class="label">Số lượt chat</div>
+            <div class="value">{{ visitor.chat_count }}</div>
+        </div>
+        <div class="card">
+            <div class="label">Thời gian active</div>
+            <div class="value">{{ visitor.active_time }}s</div>
+        </div>
+        <div class="card">
+            <div class="label">Thời gian idle</div>
+            <div class="value">{{ visitor.total_idle_time }}s</div>
+        </div>
+        <div class="card">
+            <div class="label">Scroll sâu nhất</div>
+            <div class="value">{{ visitor.max_scroll_depth }}%</div>
+        </div>
+        <div class="card">
+            <div class="label">Trang hiện tại</div>
+            <div class="value">{{ visitor.current_url or "-" }}</div>
+        </div>
+    </div>
+
+    {% if visitor.ai_analysis %}
+    <div class="panel">
+        <div class="label">AI phân tích</div>
+        <p><strong>Ý định:</strong> {{ visitor.ai_analysis.intent }}</p>
+        <p><strong>Tóm tắt:</strong> {{ visitor.ai_analysis.summary }}</p>
+    </div>
+    {% endif %}
+
+    <div class="panel">
+        <div class="label">Lịch sử chat</div>
+        {% for msg in visitor.chat_history %}
+        <div class="msg {% if msg.role == 'khách hàng' %}customer{% else %}bot{% endif %}">
+            <div class="role">{{ msg.role }}</div>
+            <div>{{ msg.content }}</div>
+        </div>
+        {% else %}
+        <p>Chưa có lịch sử chat.</p>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

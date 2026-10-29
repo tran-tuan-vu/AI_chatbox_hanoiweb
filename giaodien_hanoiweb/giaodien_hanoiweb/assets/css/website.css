@@ -1,0 +1,427 @@
+/* ---------- Hero ---------- */
+.website-hero {
+  position: relative;
+  background: var(--color-gray-900);
+  padding: var(--space-11) 0;
+  overflow: hidden;
+}
+
+.website-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.website-hero__content {
+  max-width: 560px;
+}
+
+.website-hero__title {
+  color: var(--color-white);
+  font-size: var(--text-h1-size);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: var(--space-5);
+}
+
+.website-hero__list {
+  margin-bottom: var(--space-6);
+}
+
+.website-hero__list li {
+  position: relative;
+  padding-left: var(--space-5);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-3);
+}
+
+.website-hero__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+}
+
+.website-hero__actions {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.website-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.website-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.website-hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      rgba(18, 20, 28, 0.92) 0%,
+      rgba(18, 20, 28, 0.8) 40%,
+      rgba(18, 20, 28, 0.3) 72%,
+      rgba(18, 20, 28, 0) 100%);
+}
+
+/* ---------- Lợi ích (zigzag) ---------- */
+.website-benefits {
+  padding: var(--space-10) 0;
+}
+
+.website-benefits__head {
+  max-width: 900px;
+  margin-bottom: var(--space-8);
+}
+
+.website-benefits__head .h2 {
+  margin-bottom: var(--space-4);
+  line-height: 1.35;
+}
+
+.benefit-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-8);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-6);
+}
+
+.benefit-row:last-child {
+  margin-bottom: 0;
+}
+
+.benefit-row__media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.benefit-row__media.img-placeholder {
+  border-radius: 0;
+}
+
+.benefit-row__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.benefit-row__content {
+  padding: var(--space-6) var(--space-8);
+}
+
+.benefit-row__content h3 {
+  margin-bottom: var(--space-3);
+}
+
+.benefit-row--reverse .benefit-row__media {
+  order: 2;
+}
+
+.benefit-row--reverse .benefit-row__content {
+  order: 1;
+}
+
+/* ---------- Đa lĩnh vực (zigzag) ---------- */
+.website-industries {
+  background: var(--color-teal-50);
+  padding: var(--space-10) 0;
+}
+
+.website-industries__head {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.industry-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  margin-bottom: var(--space-5);
+  height: 260px;
+}
+
+.industry-row:last-child {
+  margin-bottom: 0;
+}
+
+.industry-row__media {
+  aspect-ratio: auto;
+  overflow: hidden;
+}
+
+.industry-row__media.img-placeholder {
+  border-radius: 0;
+}
+
+.industry-row__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.industry-row__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  text-align: center;
+  padding: var(--space-6);
+}
+
+.industry-row:nth-of-type(2) .industry-row__panel {
+  background: #6D8196;
+}
+
+.industry-row:nth-of-type(3) .industry-row__panel {
+  background: #7C8EA0;
+}
+
+.industry-row:nth-of-type(4) .industry-row__panel {
+  background: #8A9AAB;
+}
+
+.industry-row:nth-of-type(5) .industry-row__panel {
+  background: #99A7B5;
+}
+
+.industry-row:nth-of-type(6) .industry-row__panel {
+  background: #A7B3C0;
+}
+
+.industry-row:nth-of-type(7) .industry-row__panel {
+  background: #C3CCD6;
+}
+
+.industry-row__label {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.industry-row__name {
+  font-size: var(--text-h4-size);
+  font-weight: 700;
+}
+
+.industry-row:nth-of-type(5) .industry-row__label,
+.industry-row:nth-of-type(6) .industry-row__label,
+.industry-row:nth-of-type(7) .industry-row__label {
+  color: var(--color-gray-900);
+}
+
+.industry-row--reverse .industry-row__media {
+  order: 2;
+}
+
+.industry-row--reverse .industry-row__panel {
+  order: 1;
+}
+
+/* ---------- Vì sao quan trọng ---------- */
+.website-why {
+  padding: var(--space-10) 0;
+}
+
+.website-why__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-9);
+  align-items: start;
+}
+
+.website-why__content .h2 {
+  margin-bottom: var(--space-4);
+  line-height: 1.35;
+}
+
+.website-why__content p {
+  margin-bottom: var(--space-4);
+}
+
+.website-why__list {
+  margin-top: var(--space-5);
+}
+
+.website-why__list .faq-item summary {
+  text-transform: uppercase;
+  font-size: var(--text-body-sm-size);
+}
+
+.website-why__media {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.website-why__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Tiêu chuẩn thiết kế (diagram) ---------- */
+.website-standards {
+  padding: var(--space-10) 0;
+}
+
+.website-standards__title {
+  max-width: 760px;
+  margin-bottom: var(--space-9);
+  line-height: 1.35;
+}
+
+.standards-diagram {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.standards-diagram__center {
+  display: flex;
+  justify-content: center;
+}
+
+.standards-diagram__center .ph-standards {
+  width: 220px;
+  aspect-ratio: 3 / 4;
+}
+
+.standards-diagram__center .ph-standards img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.standards-diagram__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.standard-box {
+  position: relative;
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  border: 1.5px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-white);
+}
+
+.standard-box__icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-teal-50);
+  color: var(--color-teal-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.standard-box__title {
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.standard-box__desc {
+  color: var(--color-gray-500);
+  font-size: var(--text-body-sm-size);
+}
+
+.standards-diagram {
+  position: relative;
+}
+
+.standards-diagram__col,
+.standards-diagram__center {
+  position: relative;
+  z-index: 1;
+}
+
+.standards-diagram__lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.standards-diagram__lines path {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+}
+
+.standards-diagram__lines .arrow-marker {
+  fill: var(--color-accent);
+}
+
+@media (max-width: 1100px) {
+
+  .website-hero__media::after {
+    background: linear-gradient(180deg,
+        rgba(18, 20, 28, 0.9) 0%,
+        rgba(18, 20, 28, 0.86) 55%,
+        rgba(18, 20, 28, 0.94) 100%);
+  }
+
+  .website-why__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-row,
+  .industry-row {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .industry-row__media {
+    aspect-ratio: 16 / 9;
+  }
+
+  .benefit-row--reverse .benefit-row__media,
+  .benefit-row--reverse .benefit-row__content,
+  .industry-row--reverse .industry-row__media,
+  .industry-row--reverse .industry-row__panel {
+    order: unset;
+  }
+
+  .standards-diagram {
+    grid-template-columns: 1fr;
+  }
+
+  .standards-diagram__lines {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .website-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

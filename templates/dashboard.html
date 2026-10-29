@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Lead - Hanoiweb</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 24px;
+            color: #222;
+        }
+
+        h1 {
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+        }
+
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        th {
+            background: #222;
+            color: #fff;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        a.row-link {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+
+        tr:hover a.row-link {
+            text-decoration: underline;
+        }
+
+        .score {
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 12px;
+            color: #fff;
+            display: inline-block;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .score-hot {
+            background: #e74c3c;
+        }
+
+        .score-warm {
+            background: #f39c12;
+        }
+
+        .score-cold {
+            background: #95a5a6;
+        }
+
+        .status {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            background: #eee;
+        }
+
+        .empty {
+            padding: 40px;
+            text-align: center;
+            color: #888;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dashboard Lead</h1>
+    <div class="subtitle">{{ leads|length }} visitor — sắp xếp theo lead score giảm dần</div>
+
+    {% if leads %}
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Session</th>
+                    <th>Điểm</th>
+                    <th>Trạng thái</th>
+                    <th>Dịch vụ quan tâm</th>
+                    <th>Ý định mua</th>
+                    <th>Số lần ghé</th>
+                    <th>Số lượt chat</th>
+                    <th>Active (giây)</th>
+                    <th>Trang hiện tại</th>
+                    <th>Hoạt động cuối</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lead in leads %}
+                <tr>
+                    <td>
+                        <a class="row-link" href="{{ url_for('dashboard_detail', session_id=lead.session_id) }}">
+                            {{ lead.session_id[:8] }}
+                        </a>
+                    </td>
+                    <td>
+                        <span class="score {% if lead.lead_score >= 70 %}score-hot{% elif lead.lead_score >= 40 %}score-warm{% else %}score-cold{% endif %}">
+                            {{ lead.lead_score }}
+                        </span>
+                    </td>
+                    <td><span class="status">{{ lead.lead_status }}</span></td>
+                    <td>{{ lead.service_interest or "-" }}</td>
+                    <td>{{ lead.purchase_intent }}</td>
+                    <td>{{ lead.visit_count }}</td>
+                    <td>{{ lead.chat_count }}</td>
+                    <td>{{ lead.active_time }}</td>
+                    <td>{{ lead.current_url or "-" }}</td>
+                    <td>{{ lead.last_event or "-" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="empty">Chưa có visitor nào.</div>
+    {% endif %}
+
+</body>
+</html>
